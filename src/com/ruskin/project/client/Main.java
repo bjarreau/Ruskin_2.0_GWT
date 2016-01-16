@@ -16,22 +16,12 @@ public class Main implements EntryPoint {
 	 * This is the instance of Main.
 	 */
 	private static Main INSTANCE;
-	private final ContactServiceAsync manager;
-
-	/**
-	 * Get the instance of {@link ContactServiceAsync} that was created when the user loaded the page.
-	 */
-	public static ContactServiceAsync getContactServices() {
-		return INSTANCE.manager;
-	}
 
 	private Map<String, String> config;
 
 	private Main() {
 		INSTANCE = this;
-		manager = GWT.create(ContactService.class);
 	}
-	
 	
 	/**
 	 * This is the entry point method; it is called by GWT after creating this object.
@@ -45,7 +35,9 @@ public class Main implements EntryPoint {
 	 * Create the main user interface and then attach it to the {@link RootPanel}.
 	 */
 	private void buildUI() {
+		RootPanel.getBodyElement().getStyle().setBackgroundColor("#000040");
 		final RootPanel root = RootPanel.get();
+		
 		final MainWidget main;
 		
 		main = new MainWidget();

@@ -1,11 +1,7 @@
 package com.ruskin.project.client;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.dom.client.Style.Float;
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -20,7 +16,6 @@ import com.ruskin.project.client.lists.PassThrough;
 import com.ruskin.project.client.searchWidget.SearchWidget;
 import com.ruskin.project.client.widget.mapwidget.PlaceMapWidget;
 import com.ruskin.project.client.widget.time.TimeWidget;
-import com.ruskin.project.shared.GWTContact;
 
 /**
  * The main widget, which is added to the RootPanel.
@@ -56,10 +51,7 @@ public class MainWidget implements IsWidget {
 	
 
 	private void buildUI() {
-		final HorizontalPanel searchStuff = new HorizontalPanel();
 		mainPanel.setWidth("100%");
-		searchStuff.add(placesMap);
-		searchStuff.add(searchWidget);
 		
 		FlowPanel titleContainer = new FlowPanel();
 		titleContainer.setStyleName("titleContainer");
@@ -72,7 +64,8 @@ public class MainWidget implements IsWidget {
 		titleContainer.add(miwContainer);
 		titleContainer.add(titleLabel);
 		mainPanel.add(titleContainer);		
-		mainPanel.add(searchStuff);
+		mainPanel.add(searchWidget);
+		mainPanel.add(placesMap);
 		mainPanel.add(timePanel);		
 	
 	}
