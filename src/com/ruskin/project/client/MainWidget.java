@@ -1,6 +1,9 @@
 package com.ruskin.project.client;
 
 import com.google.gwt.dom.client.Style.Float;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -57,9 +60,14 @@ public class MainWidget implements IsWidget {
 		Label titleLabel = new Label();
 		Image logo = new Image("img/ruskin_logo_2.png");
 		logo.setHeight("50px");
-//			href="http://english.selu.edu/humanitiesonline/ruskin/apparatuses/account_of_a_tour_on_the_continent_apparatus.php"
+	
 		titleLabel.setStyleName("titleLabel");
 		titleLabel.getElement().appendChild(logo.getElement());
+		titleLabel.addClickHandler(new ClickHandler () {
+			 public void onClick(ClickEvent event) {  
+		          Window.Location.assign("http://english.selu.edu/humanitiesonline/ruskin/apparatuses/account_of_a_tour_on_the_continent_apparatus.php");
+			 }
+		});
 		
 		titleContainer.add(titleLabel);
 		mainPanel.add(titleContainer);		
