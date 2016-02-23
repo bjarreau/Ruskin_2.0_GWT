@@ -1,6 +1,5 @@
 package com.ruskin.project.client;
 
-import com.google.gwt.dom.client.Style.Float;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
@@ -18,7 +17,7 @@ import com.ruskin.project.client.lists.JJList;
 import com.ruskin.project.client.lists.MaryList;
 import com.ruskin.project.client.lists.PassThrough;
 import com.ruskin.project.client.widget.mapwidget.PlaceMapWidget;
-import com.ruskin.project.client.widget.time.TimeWidget;
+import com.ruskin.project.client.widget.time.Carousel;
 
 /**
  * The main widget, which is added to the RootPanel.
@@ -28,7 +27,7 @@ import com.ruskin.project.client.widget.time.TimeWidget;
  */
 public class MainWidget implements IsWidget {
 	
-	private final TimeWidget timePanel;
+	private final Carousel timePanel;
 	private VerticalPanel mainPanel = new VerticalPanel();	
 	private final PlaceMapWidget placesMap;
 	private final DiaryLayerDialog diaryDialog;
@@ -43,7 +42,7 @@ public class MainWidget implements IsWidget {
 	public MainWidget() {
 		this.mainPanel = new VerticalPanel();
 		placesMap = new PlaceMapWidget(this);
-		timePanel = new TimeWidget(this);
+		timePanel = new Carousel(this);
 		diaryDialog = new DiaryLayerDialog(this);
 		ruskinDialog = new RuskinDialog(this);
 		allDialog = new AllDialog(this);
@@ -79,7 +78,7 @@ public class MainWidget implements IsWidget {
 		return placesMap;
 	}
 	
-	public TimeWidget getTimeWidget() {
+	public Carousel getTimeWidget() {
 		return timePanel;
 	}
 	

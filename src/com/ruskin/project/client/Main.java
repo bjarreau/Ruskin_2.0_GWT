@@ -33,7 +33,7 @@ public class Main implements EntryPoint {
 	 * Create the main user interface and then attach it to the {@link RootPanel}.
 	 */
 	private void buildUI() {
-		RootPanel.getBodyElement().getStyle().setBackgroundColor("#000040");
+		RootPanel.getBodyElement().getStyle().setBackgroundColor("#172133");
 		RootPanel.getBodyElement().getStyle().setWidth(100, Unit.PCT);
 		final RootPanel root = RootPanel.get();
 		

@@ -1,7 +1,7 @@
 /** Add css rules here for your application. */
 /** Example rules used by the template application (remove for your app) */
 .titleContainer{
-	background-color: #000040;
+	background-color: #172133;
 	height: 50px;
 }
 
@@ -44,20 +44,20 @@
 
 .mapDecorator{
 	bottom: 0px;
-	height: 450px;	
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.queryPanel{
-	height: 200px;
+.carousel { 
 	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .flexTableCellHead{
 	font: italic 20px sans-serif;
-	color: #000040;
+	color: #172133;
 	text-align: center;
 	background-color: white;
 }

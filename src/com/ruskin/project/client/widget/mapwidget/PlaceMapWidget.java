@@ -81,7 +81,7 @@ public class PlaceMapWidget implements IsWidget {
 		
 		options = new MapOptions();
 		options.setNumZoomLevels(20);
-		mapWidget = new MapWidget("100%", "500px", options);
+		mapWidget = new MapWidget("100%", "450px", options);
 		decorator = new VerticalPanel();
 		decorator.setStyleName("mapDecorator");
 		decorator.add(mapWidget);
