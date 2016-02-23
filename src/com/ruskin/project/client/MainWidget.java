@@ -2,6 +2,7 @@ package com.ruskin.project.client;
 
 import com.google.gwt.dom.client.Style.Float;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -13,7 +14,6 @@ import com.ruskin.project.client.lists.AllList;
 import com.ruskin.project.client.lists.JJList;
 import com.ruskin.project.client.lists.MaryList;
 import com.ruskin.project.client.lists.PassThrough;
-import com.ruskin.project.client.searchWidget.SearchWidget;
 import com.ruskin.project.client.widget.mapwidget.PlaceMapWidget;
 import com.ruskin.project.client.widget.time.TimeWidget;
 
@@ -31,7 +31,7 @@ public class MainWidget implements IsWidget {
 	private final DiaryLayerDialog diaryDialog;
 	private final RuskinDialog ruskinDialog;
 	private final AllDialog allDialog;
-	private final SearchWidget searchWidget;
+	
 	private final AllList All = new AllList();
 	private final MaryList Mary = new MaryList();
 	private final JJList JohnJames = new JJList();
@@ -39,35 +39,32 @@ public class MainWidget implements IsWidget {
 	
 	public MainWidget() {
 		this.mainPanel = new VerticalPanel();
-		placesMap = new PlaceMapWidget(700,450, this);
+		placesMap = new PlaceMapWidget(this);
 		timePanel = new TimeWidget(this);
 		diaryDialog = new DiaryLayerDialog(this);
 		ruskinDialog = new RuskinDialog(this);
 		allDialog = new AllDialog(this);
-		searchWidget = new SearchWidget(this);
 		
 		this.buildUI();		
 	}
 	
-
 	private void buildUI() {
 		mainPanel.setWidth("100%");
 		
 		FlowPanel titleContainer = new FlowPanel();
 		titleContainer.setStyleName("titleContainer");
-		Label miwContainer = new Label();
-		miwContainer.getElement().getStyle().setFloat(Float.LEFT);
-		Label titleLabel = new Label();
-		titleLabel.setStyleName("titleLabel");
-		titleLabel.setText("The Journey");
 		
-		titleContainer.add(miwContainer);
+		Label titleLabel = new Label();
+		Image logo = new Image("img/ruskin_logo_2.png");
+		logo.setHeight("50px");
+//			href="http://english.selu.edu/humanitiesonline/ruskin/apparatuses/account_of_a_tour_on_the_continent_apparatus.php"
+		titleLabel.setStyleName("titleLabel");
+		titleLabel.getElement().appendChild(logo.getElement());
+		
 		titleContainer.add(titleLabel);
 		mainPanel.add(titleContainer);		
-		mainPanel.add(searchWidget);
 		mainPanel.add(placesMap);
 		mainPanel.add(timePanel);		
-	
 	}
 	
 	public final PlaceMapWidget getMap() {
@@ -90,14 +87,8 @@ public class MainWidget implements IsWidget {
 		return allDialog;
 	}
 	
-	public SearchWidget getSearchWidget() {
-		return searchWidget;
-	}
-	
 	@Override
 	public Widget asWidget() {
 		return mainPanel;
 	}
-
-
 }

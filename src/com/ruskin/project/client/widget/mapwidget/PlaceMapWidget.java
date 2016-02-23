@@ -2,6 +2,7 @@ package com.ruskin.project.client.widget.mapwidget;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.gwtopenmaps.openlayers.client.Bounds;
@@ -16,9 +17,12 @@ import org.gwtopenmaps.openlayers.client.control.SelectFeatureOptions;
 import org.gwtopenmaps.openlayers.client.event.VectorFeatureSelectedListener;
 import org.gwtopenmaps.openlayers.client.feature.VectorFeature;
 import org.gwtopenmaps.openlayers.client.geometry.Point;
+import org.gwtopenmaps.openlayers.client.layer.ArcGIS93Rest;
 import org.gwtopenmaps.openlayers.client.layer.Layer;
 import org.gwtopenmaps.openlayers.client.layer.OSM;
 import org.gwtopenmaps.openlayers.client.layer.Vector;
+import org.gwtopenmaps.openlayers.client.layer.WMS;
+import org.gwtopenmaps.openlayers.client.layer.WMSParams;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -43,8 +47,10 @@ import com.ruskin.project.shared.ReducedContact;
  */
 public class PlaceMapWidget implements IsWidget {
 
-	private static MainWidget master;	
+//	private static final Bounds[] Bounds = null;
+//	private static MainWidget master;	
 	private final VerticalPanel decorator;
+	
 	private final Map map;
 	
 	private final MapOptions options;
@@ -65,17 +71,17 @@ public class PlaceMapWidget implements IsWidget {
 	private final Bounds maxVisibleExtent;
 	private static List<GWTContact> currentlyHighlighted = new ArrayList<>();
 	
+	private final java.util.Map<String, ArcGIS93Rest> wmsLayers = new HashMap<String, ArcGIS93Rest>();
+	private final java.util.Map<String, Layer> layersHashMap= new HashMap<String, Layer>();
+	
 	private final Projection proj;
 	
-	public PlaceMapWidget(int width, int height, final MainWidget master) {		
-		this.master = master;
-		
+	public PlaceMapWidget(final MainWidget master) {		
 		choices = new ListBox();
 		
 		options = new MapOptions();
 		options.setNumZoomLevels(20);
-		mapWidget = new MapWidget(new Integer(width).toString(), new Integer(height).toString(), options);
-		
+		mapWidget = new MapWidget("100%", "500px", options);
 		decorator = new VerticalPanel();
 		decorator.setStyleName("mapDecorator");
 		decorator.add(mapWidget);
@@ -85,7 +91,7 @@ public class PlaceMapWidget implements IsWidget {
 		map = mapWidget.getMap();
 		map.setRestrictedExtent(bounds);
 		map.setMinMaxZoomLevel(0, 20);
-		
+	
 		BuildUI();
 		
 		OSM tempLayer = OSM.Mapnik("TempLayer");
@@ -94,6 +100,9 @@ public class PlaceMapWidget implements IsWidget {
 		allVectorLayer = new Vector("All Layers");
 		
 		map.addLayer(tempLayer);
+		
+//		this.addSingleLayerXYZ("OpenLayers XYZ", "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
+//		this.setBaseLayer("OpenLayers XYZ");
 		
 		clickControlOptions = new SelectFeatureOptions();
 		diaryControl = new SelectFeature(diaryVectorLayer, clickControlOptions);
@@ -142,7 +151,7 @@ public class PlaceMapWidget implements IsWidget {
 		this.zoomToBounds(bounds);
 		LonLat center = new LonLat(8,48);
 		center.transform(proj.getProjectionCode(), map.getProjection());
-		map.setCenter(center, 5);
+		map.setCenter(center, 6);
 		maxVisibleExtent = map.getExtent();
 		
 	}	
@@ -164,6 +173,7 @@ public class PlaceMapWidget implements IsWidget {
     	});
 	
 		buttonPanel.add(choices);
+		buttonPanel.setHeight("50px");
 		decorator.add(buttonPanel);
 	}
 	
@@ -186,6 +196,14 @@ public class PlaceMapWidget implements IsWidget {
 		return choice;
 	}
 	
+	/** Sets the base layer for this ContactMapWidget.
+	 * 
+	 * @param name
+	 */
+	public void setBaseLayer(String name) {		
+		this.map.setBaseLayer(layersHashMap.get(name));
+	}
+	
 	/** Sets the center of the map and zoom level.
 	 * 
 	 * @param ll
@@ -194,6 +212,21 @@ public class PlaceMapWidget implements IsWidget {
 	public void setCenter(LonLat ll, int zoom) {
 		this.map.setCenter(ll,zoom);
 	}	
+	
+	/** Adds a {@link WMS} with only one map layer to this ContactMapWidget.
+	 * 
+	 * @param name
+	 * @param url - the URL needed for the WMS layer
+	 */
+	public void addSingleLayerXYZ(String name, String url) {
+		WMSParams wmsParams = new WMSParams();
+		wmsParams.setFormat("image/png");
+		ArcGIS93Rest layer = new ArcGIS93Rest(name, url, wmsParams);
+		wmsLayers.put(name,layer);
+		layersHashMap.put(name, layer);			
+		this.map.addLayer(layer);
+	}
+
 	
 	/** Returns the current base layer of this MapWidget.
 	 * 
@@ -263,7 +296,6 @@ public class PlaceMapWidget implements IsWidget {
 			this.setCenter(new LonLat(8, 48), 5);
 		}
 	}
-
 	
 	public void PlotPointAll(Boolean plot) {
 		map.addLayer(allVectorLayer);
@@ -418,14 +450,6 @@ public class PlaceMapWidget implements IsWidget {
 		contactImage.getStyle().setExternalGraphic("img/map_marker_gray.png");				
 		currentlyHighlighted.add(contact);
 	}	
-	
-//	public void highlightContactsFromSearch(){
-//		List<GWTContact> list = master.getSearchWidget().getList();
-//		for(GWTContact contact: list){
-//			highlightContact(contact);
-//			currentlyHighlighted.add(contact);
-//		}
-//	}
 	
 	/**This method unhighlights all of the currently highlighted contacts.
 	 * 

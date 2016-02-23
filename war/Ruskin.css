@@ -23,6 +23,10 @@
 	color: white;
 } 
 
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .rochsum {
    text-decoration: underline;
@@ -41,19 +45,20 @@
 .mapDecorator{
 	bottom: 0px;
 	height: 450px;	
-	width: 700px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .queryPanel{
-	height: 300px;
+	height: 200px;
 	width: 100%;
-	border: 2px solid white;
 }
 
 .flexTableCellHead{
 	font: italic 20px sans-serif;
-	color: white;
+	color: #000040;
 	text-align: center;
-	background-color: #000040;
+	background-color: white;
 }
 

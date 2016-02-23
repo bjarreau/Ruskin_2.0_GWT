@@ -3,22 +3,16 @@ package com.ruskin.project.client.searchWidget;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
-import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SuggestBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
-
 import com.google.gwt.view.client.ListDataProvider;
-
-import com.ruskin.project.client.MainWidget;
 import com.ruskin.project.client.lists.AllList;
 import com.ruskin.project.shared.GWTContact;
 
@@ -27,13 +21,7 @@ import com.ruskin.project.shared.GWTContact;
  *Author: Holden Pitre
  */
 public class SearchWidget implements IsWidget {
-	private final MainWidget master;
-	
-	Label blankSpace;
-	
-	VerticalPanel holder;
 	HorizontalPanel searchbar;
-	ScrollPanel scrollable;
 	Button b;
 	MultiWordSuggestOracle oracle;   
 	SuggestBox box; 
@@ -42,16 +30,11 @@ public class SearchWidget implements IsWidget {
 	private List<GWTContact> list = dataProvider.getList();	
 	private final List<GWTContact> searchList = new ArrayList<>();
 	
-	public SearchWidget(MainWidget master) {
-		this.master = master;
-		
-		blankSpace = new Label(" ");
-		
-		holder = new VerticalPanel();
+	public SearchWidget() {
 		searchbar = new HorizontalPanel();
+		searchbar.setWidth("450px");
+		searchbar.setHeight("50px");
 		
-		searchbar.setWidth("1000px");
-		searchbar.setHeight("60px");
 		oracle = new MultiWordSuggestOracle();
 		
 		box = new SuggestBox(oracle);
@@ -61,8 +44,6 @@ public class SearchWidget implements IsWidget {
 	}
 	
 	private void BuildUI() {
-		blankSpace.setHeight("20px");
-		
 		oracle.add("Germany"); 
 		oracle.add("France"); 
 		oracle.add("Britain"); 
@@ -85,20 +66,18 @@ public class SearchWidget implements IsWidget {
 						getList().add(c);
 					}
 				}		
-				master.getMap().printContacts(list);
-				master.getMap().getVectorLayer().redraw();
+//				master.getMap().printContacts(list);
+//				master.getMap().getVectorLayer().redraw();
 				System.out.println(getList().size());
 			}
 		});
 		
-		box.setWidth("940px");
+		box.setWidth("350px");
 		searchbar.add(box);
 		searchbar.add(b);
-		
-		holder.add(blankSpace);
-		holder.add(searchbar);
-		
-		holder.add(searchbar);
+		searchbar.setSpacing(1);
+		b.getElement().getStyle().setFloat(Style.Float.RIGHT);
+		searchbar.getElement().getStyle().setFloat(Style.Float.RIGHT);
 	}
 	
 	public List<GWTContact> getList() {
@@ -115,7 +94,7 @@ public class SearchWidget implements IsWidget {
 	
 	@Override
 	public Widget asWidget() {
-		return holder;
+		return searchbar;
 	}
 
 }
