@@ -16,6 +16,7 @@ import org.gwtopenmaps.openlayers.client.control.SelectFeature;
 import org.gwtopenmaps.openlayers.client.control.SelectFeatureOptions;
 import org.gwtopenmaps.openlayers.client.event.VectorFeatureSelectedListener;
 import org.gwtopenmaps.openlayers.client.feature.VectorFeature;
+import org.gwtopenmaps.openlayers.client.geometry.LineString;
 import org.gwtopenmaps.openlayers.client.geometry.Point;
 import org.gwtopenmaps.openlayers.client.layer.ArcGIS93Rest;
 import org.gwtopenmaps.openlayers.client.layer.Layer;
@@ -498,6 +499,31 @@ public class PlaceMapWidget implements IsWidget {
 				allVectorLayer.getFeatureById(c.getId()).getStyle().setExternalGraphic("img/map_marker_red.png");
 			}
 		}
+	}
+	
+	public VectorFeature createLine(List<Point> points) {
+		Point[] point = new Point[points.size()];
+		int i=0;
+
+		for(Point p:points) {
+			point[i] = p;
+			i++;
+
+		}
+
+		final LineString line = new LineString(point);
+		final VectorFeature vf = new VectorFeature(line);
+
+		return vf;
+	}
+	
+	/** this method will draw the lines from the shapefile
+	 * 
+	 * @param line
+	 * @param layer
+	 */
+	public void drawLine(VectorFeature line, Vector layer) {
+		layer.addFeature(line);
 	}
 	
 	public List<GWTContact> getCurrentlyHighlighted() {
