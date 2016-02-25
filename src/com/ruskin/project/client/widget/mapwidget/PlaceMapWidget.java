@@ -80,7 +80,7 @@ public class PlaceMapWidget implements IsWidget {
 		
 		options = new MapOptions();
 		options.setNumZoomLevels(20);
-		mapWidget = new MapWidget("100%", "450px", options);
+		mapWidget = new MapWidget("100%", "360px", options);
 		decorator = new VerticalPanel();
 		decorator.setStyleName("mapDecorator");
 		decorator.add(mapWidget);
@@ -150,7 +150,7 @@ public class PlaceMapWidget implements IsWidget {
 		this.zoomToBounds(bounds);
 		LonLat center = new LonLat(8,48);
 		center.transform(proj.getProjectionCode(), map.getProjection());
-		map.setCenter(center, 6);
+		map.setCenter(center, 5);
 		maxVisibleExtent = map.getExtent();
 		
 	}	

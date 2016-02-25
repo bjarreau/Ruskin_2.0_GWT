@@ -54,14 +54,16 @@ public class Carousel implements IsWidget {
 		btnContainer.setWidth("1250px");
 		
 		left.getElement().appendChild(leftArrow.getElement());
-		left.setHeight("200px");
-		left.setWidth("30px");
+		left.setHeight("130px");
+		left.setWidth("50px");
 		left.getElement().getStyle().setFloat(Style.Float.LEFT);
+		left.setStyleName("timeBtn");
 		
 		right.getElement().appendChild(rightArrow.getElement());
-		right.setHeight("200px");
-		right.setWidth("30px");
+		right.setHeight("130px");
+		right.setWidth("50px");
 		right.getElement().getStyle().setFloat(Style.Float.RIGHT);
+		right.setStyleName("timeBtn");
 
 //    // ClickHandler for september listbox
 //    september.addClickHandler(new ClickHandler() {

@@ -65,7 +65,7 @@ public class MainWidget implements IsWidget {
 		
 		Label titleLabel = new Label();
 		Image logo = new Image("img/ruskin_logo_2.png");
-		logo.setHeight("40px");
+		logo.setHeight("50px");
 	
 		titleLabel.setStyleName("titleLabel");
 		titleLabel.getElement().appendChild(logo.getElement());
