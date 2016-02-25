@@ -5,6 +5,19 @@
 	height: 50px;
 }
 
+.perspectiveLbl{
+	background-color: #172133;
+	color: white;
+	text-align: center;
+	font: bold 25px serif;
+}
+
+.perspective {
+	background-color:  #3B5786;
+	color: white;
+	font: bold 20px sans-serif;	
+}
+
 .titleLabel{
 	font: italic 50px sans-serif;
 	color: white;

@@ -91,7 +91,7 @@ public class PlaceMapWidget implements IsWidget {
 		map = mapWidget.getMap();
 		map.setRestrictedExtent(bounds);
 		map.setMinMaxZoomLevel(0, 20);
-	
+		
 		BuildUI();
 		
 		OSM tempLayer = OSM.Mapnik("TempLayer");
@@ -100,6 +100,8 @@ public class PlaceMapWidget implements IsWidget {
 		allVectorLayer = new Vector("All Layers");
 		
 		map.addLayer(tempLayer);
+		map.addLayer(diaryVectorLayer);
+		map.addLayer(ruskinVectorLayer);
 		
 //		this.addSingleLayerXYZ("OpenLayers XYZ", "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
 //		this.setBaseLayer("OpenLayers XYZ");

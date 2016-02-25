@@ -16,6 +16,7 @@ import com.ruskin.project.client.lists.AllList;
 import com.ruskin.project.client.lists.JJList;
 import com.ruskin.project.client.lists.MaryList;
 import com.ruskin.project.client.lists.PassThrough;
+import com.ruskin.project.client.widget.mapwidget.LayerSwitcher;
 import com.ruskin.project.client.widget.mapwidget.PlaceMapWidget;
 import com.ruskin.project.client.widget.time.Carousel;
 
@@ -39,6 +40,8 @@ public class MainWidget implements IsWidget {
 	private final JJList JohnJames = new JJList();
 	private final PassThrough Pass = new PassThrough();
 	
+	private final LayerSwitcher switcher;
+	
 	public MainWidget() {
 		this.mainPanel = new VerticalPanel();
 		placesMap = new PlaceMapWidget(this);
@@ -47,18 +50,22 @@ public class MainWidget implements IsWidget {
 		ruskinDialog = new RuskinDialog(this);
 		allDialog = new AllDialog(this);
 		
+		switcher = new LayerSwitcher();
 		this.buildUI();		
 	}
 	
 	private void buildUI() {
 		mainPanel.setWidth("100%");
 		
+		switcher.setPopupPosition(Window.getClientWidth()-270, 60);
+		switcher.show();
+		
 		FlowPanel titleContainer = new FlowPanel();
 		titleContainer.setStyleName("titleContainer");
 		
 		Label titleLabel = new Label();
 		Image logo = new Image("img/ruskin_logo_2.png");
-		logo.setHeight("50px");
+		logo.setHeight("40px");
 	
 		titleLabel.setStyleName("titleLabel");
 		titleLabel.getElement().appendChild(logo.getElement());
