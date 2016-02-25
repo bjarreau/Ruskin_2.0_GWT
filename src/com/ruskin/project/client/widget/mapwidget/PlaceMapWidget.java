@@ -46,15 +46,14 @@ import com.ruskin.project.shared.ReducedContact;
  *Author: Brittney Jarreau
  */
 public class PlaceMapWidget implements IsWidget {
-
-//	private static final Bounds[] Bounds = null;
-//	private static MainWidget master;	
 	private final VerticalPanel decorator;
 	
 	private final Map map;
 	
 	private final MapOptions options;
 	private final MapWidget mapWidget;
+	
+	private final LayerSwitcher switcher;
 	
 	private static ListBox choices;
 	
@@ -92,7 +91,7 @@ public class PlaceMapWidget implements IsWidget {
 		map.setRestrictedExtent(bounds);
 		map.setMinMaxZoomLevel(0, 20);
 		
-		BuildUI();
+		switcher = master.getLayerSwitcher();
 		
 		OSM tempLayer = OSM.Mapnik("TempLayer");
 		diaryVectorLayer = new Vector("Diary Layer");
@@ -100,8 +99,6 @@ public class PlaceMapWidget implements IsWidget {
 		allVectorLayer = new Vector("All Layers");
 		
 		map.addLayer(tempLayer);
-		map.addLayer(diaryVectorLayer);
-		map.addLayer(ruskinVectorLayer);
 		
 //		this.addSingleLayerXYZ("OpenLayers XYZ", "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
 //		this.setBaseLayer("OpenLayers XYZ");
@@ -158,27 +155,6 @@ public class PlaceMapWidget implements IsWidget {
 		
 	}	
 	
-	private void BuildUI() {
-		final HorizontalPanel buttonPanel = new HorizontalPanel();
-		
-		buttonPanel.getElement().getStyle().setProperty("height", "inherit");
-
-		choices.addItem("Choose A View");
-		choices.addItem("All Layers");
-		choices.addItem("Diary Layer");
-		choices.addItem("Ruskin Layer");
-		
-		choices.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent Event) {
-				NewLayer(choices.getItemText(choices.getSelectedIndex()));
-			}
-    	});
-	
-		buttonPanel.add(choices);
-		buttonPanel.setHeight("50px");
-		decorator.add(buttonPanel);
-	}
-	
 	public String NewLayer(String choice) {
 		if(choice.matches("All Layers")) {
 			PlotPointAll(true);
@@ -194,6 +170,11 @@ public class PlaceMapWidget implements IsWidget {
 			PlotPointAll(false);
 			PlotPointDiary(false);
 			PlotPointsRuskin(true);
+		}
+		else if (choice.matches("None")) {
+			PlotPointAll(false);
+			PlotPointDiary(false);
+			PlotPointsRuskin(false);
 		}
 		return choice;
 	}

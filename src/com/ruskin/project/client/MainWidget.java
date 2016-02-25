@@ -45,12 +45,12 @@ public class MainWidget implements IsWidget {
 	public MainWidget() {
 		this.mainPanel = new VerticalPanel();
 		placesMap = new PlaceMapWidget(this);
+		switcher = new LayerSwitcher(this);
 		timePanel = new Carousel(this);
 		diaryDialog = new DiaryLayerDialog(this);
 		ruskinDialog = new RuskinDialog(this);
 		allDialog = new AllDialog(this);
 		
-		switcher = new LayerSwitcher();
 		this.buildUI();		
 	}
 	
@@ -99,6 +99,10 @@ public class MainWidget implements IsWidget {
 	
 	public AllDialog getAllDialog() {
 		return allDialog;
+	}
+	
+	public LayerSwitcher getLayerSwitcher() {
+		return switcher;
 	}
 	
 	@Override
