@@ -24,11 +24,7 @@ import org.gwtopenmaps.openlayers.client.layer.Vector;
 import org.gwtopenmaps.openlayers.client.layer.WMS;
 import org.gwtopenmaps.openlayers.client.layer.WMSParams;
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.ruskin.project.client.MainWidget;
@@ -55,8 +51,6 @@ public class PlaceMapWidget implements IsWidget {
 	
 	private final LayerSwitcher switcher;
 	
-	private static ListBox choices;
-	
 	private static Vector diaryVectorLayer;
 	private static Vector ruskinVectorLayer;
 	private static Vector allVectorLayer;
@@ -75,9 +69,10 @@ public class PlaceMapWidget implements IsWidget {
 	
 	private final Projection proj;
 	
-	public PlaceMapWidget(final MainWidget master) {		
-		choices = new ListBox();
-		
+	public String currentVector;
+	LonLat center = new LonLat(8,48);
+	
+	public PlaceMapWidget(final MainWidget master) {	
 		options = new MapOptions();
 		options.setNumZoomLevels(20);
 		mapWidget = new MapWidget("100%", "360px", options);
@@ -148,14 +143,14 @@ public class PlaceMapWidget implements IsWidget {
 		map.setRestrictedExtent(bounds);
 		map.zoomToExtent(bounds);
 		this.zoomToBounds(bounds);
-		LonLat center = new LonLat(8,48);
+		
 		center.transform(proj.getProjectionCode(), map.getProjection());
 		map.setCenter(center, 5);
 		maxVisibleExtent = map.getExtent();
 		
 	}	
 	
-	public String NewLayer(String choice) {
+	public void NewLayer(String choice) {
 		if(choice.matches("All Layers")) {
 			PlotPointAll(true);
 			PlotPointDiary(false);
@@ -176,7 +171,21 @@ public class PlaceMapWidget implements IsWidget {
 			PlotPointDiary(false);
 			PlotPointsRuskin(false);
 		}
-		return choice;
+		currentVector = choice;
+	}
+	
+	/** Returns the layer responsible for drawing the images.
+	 * 
+	 * @return
+	 */
+	public Vector getVectorLayer() {
+		if (currentVector.matches("Diary Layer")) {
+			return diaryVectorLayer;
+		} else if (currentVector.matches("Ruskin Layer")) {
+			return ruskinVectorLayer;
+		} else {
+			return allVectorLayer;
+		} 
 	}
 	
 	/** Sets the base layer for this ContactMapWidget.
@@ -254,21 +263,21 @@ public class PlaceMapWidget implements IsWidget {
 	 *            - a list of {@link ReducedContact} objects resulting from search
 	 */		
 	public void printContacts(List<? extends ReducedContact> contacts) {
-		getVectorLayer().destroyFeatures();
+//		getVectorLayer().destroyFeatures();
 		Style pointStyle = new Style();		
 		for (ReducedContact c : contacts) {
-
+//			getVectorLayer().getFeatureById(c.getId()).getAttributes().getAttributeAsString(name)
 			Point point = new Point(c.getLongitude(), c.getLatitude());
 			point.transform(proj, new Projection(map.getProjection()));
 				
-			pointStyle.setExternalGraphic("img/map_marker_red.png");
+			pointStyle.setExternalGraphic("img/map_marker_gray.png");
 			pointStyle.setGraphicSize(10, 17);
 			pointStyle.setFillOpacity(1.0);
 
 			VectorFeature pointFeature = new VectorFeature(point, pointStyle);
 			pointFeature.getAttributes().setAttribute(Const.FEATURE_ATTRIBUTE_CONTACT_ID, c.getId());
 			pointFeature.setFeatureId(c.getId());
-			getVectorLayer().addFeature(pointFeature);			
+			getVectorLayer().addFeature(pointFeature);		
 		}
 
 		Bounds dataExtent = getVectorLayer().getDataExtent();
@@ -276,7 +285,7 @@ public class PlaceMapWidget implements IsWidget {
 		if(!outOfBounds){		
 			zoomToBounds(getVectorLayer().getDataExtent());			
 		}else{
-			this.setCenter(new LonLat(8, 48), 5);
+			this.setCenter(center, 5);
 		}
 	}
 	
@@ -407,50 +416,7 @@ public class PlaceMapWidget implements IsWidget {
 	public void eraseRuskinContacts() {
 		ruskinVectorLayer.destroyFeatures();
 	}
-	
-	/** Returns the layer responsible for drawing the images.
-	 * 
-	 * @return
-	 */
-	public Vector getVectorLayer() {
-		if (choices.getItemText(choices.getSelectedIndex()).matches("Diary Layer")) {
-			return diaryVectorLayer;
-		}
-		else if (choices.getItemText(choices.getSelectedIndex()).matches("Ruskin Layer")) {
-			return ruskinVectorLayer;
-		}
-		else {
-			return allVectorLayer;
-		}
-	}
-	
-	/**This method highlights the contact specified by contact in green.
-	 * 
-	 * @param contact - the contact to be highlighted
-	 */
-	public void highlightContact(GWTContact contact){
-		VectorFeature contactImage = getVectorLayer().getFeatureById(contact.getId());
-		contactImage.getStyle().setExternalGraphic("img/map_marker_gray.png");				
-		currentlyHighlighted.add(contact);
-	}	
-	
-	/**This method unhighlights all of the currently highlighted contacts.
-	 * 
-	 */
-	public void clearHighlighted(){	
-			Vector layer = getVectorLayer();
-			if (layer.equals(allVectorLayer)) {
-				clearAllLayerHighlighted();
-			}
-			else if (layer.equals(diaryVectorLayer)) {
-				clearDiaryLayerHighlighted();
-			}
-			else if (layer.equals(diaryVectorLayer)) {
-				clearRuskinLayerHighlighted();
-			}
-		currentlyHighlighted.clear();
-	}
-	
+
 	/**This method unhighlights all of the currently highlighted contacts.
 	 * 
 	 */

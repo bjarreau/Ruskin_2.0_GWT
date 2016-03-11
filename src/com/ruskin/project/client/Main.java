@@ -34,14 +34,9 @@ public class Main implements EntryPoint {
 	 */
 	private void buildUI() {
 		RootPanel.getBodyElement().getStyle().setBackgroundColor("#172133");
-		RootPanel.getBodyElement().getStyle().setWidth(100, Unit.PCT);
 		final RootPanel root = RootPanel.get();
 		
-		final MainWidget main;
-		
-		main = new MainWidget();
-		main.asWidget().getElement().setAttribute("align",  "center");
-		main.asWidget().getElement().getStyle().setWidth(100,  Unit.PCT);			
+		final MainWidget main = new MainWidget();		
 		root.add(main);
 	}
 }

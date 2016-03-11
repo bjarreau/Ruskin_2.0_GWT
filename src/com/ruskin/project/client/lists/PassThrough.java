@@ -233,17 +233,17 @@ public class PassThrough extends ArrayList<GWTPassThrough>{
 		gwtC33.setLocation("Ruins of Hammerstein");
 		
 		GWTPassThrough gwtC34 = GWTPassThrough.createGWTPassThrough("Ruins of Sain");
-		gwtC34.setReference("Coblentz(Koblenz)");
+		gwtC34.setReference("Coblentz");
 		gwtC34.setCountry("Germany");
 		gwtC34.setLocation("Ruins of Sain");
 		
 		GWTPassThrough gwtC35 = GWTPassThrough.createGWTPassThrough("Fort Francis/Petersburgh");
-		gwtC35.setReference("Coblentz(Koblenz)");
+		gwtC35.setReference("Coblentz");
 		gwtC35.setCountry("Germany");
 		gwtC35.setLocation("Fort Francis/Petersburgh");
 		
 		GWTPassThrough gwtC36 = GWTPassThrough.createGWTPassThrough("Ehrenbreitstein(Fortress)");
-		gwtC36.setReference("Coblentz(Koblenz)");
+		gwtC36.setReference("Coblentz");
 		gwtC36.setCountry("Germany");
 		gwtC36.setLocation("Ehrenbreitstein(Fortress)");
 		

@@ -124,9 +124,9 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC11.setSights("Roman Tower, Church");
 		gwtC11.setDateRef(528);
 		
-		GWTContact gwtC12 = GWTContact.createGWTContact("Coblentz(Koblenz)");
+		GWTContact gwtC12 = GWTContact.createGWTContact("Coblentz");
 		gwtC12.setCountry("Germany");
-		gwtC12.setLocation("Coblentz(Koblenz)");
+		gwtC12.setLocation("Coblentz");
 		gwtC12.setLongitude(7.584881);
 		gwtC12.setLatitude(50.37302);
 		gwtC12.setArrivalDate("29 May, 1833");

@@ -57,7 +57,7 @@ public class MainWidget implements IsWidget {
 	private void buildUI() {
 		mainPanel.setWidth("100%");
 		
-		switcher.setPopupPosition(Window.getClientWidth()-270, 60);
+		switcher.setPopupPosition(Window.getClientWidth()-250, 60);
 		switcher.show();
 		
 		FlowPanel titleContainer = new FlowPanel();
