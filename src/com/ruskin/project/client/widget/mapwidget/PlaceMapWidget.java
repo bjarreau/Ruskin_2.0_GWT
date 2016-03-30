@@ -23,6 +23,8 @@ import org.gwtopenmaps.openlayers.client.layer.OSM;
 import org.gwtopenmaps.openlayers.client.layer.Vector;
 import org.gwtopenmaps.openlayers.client.layer.WMS;
 import org.gwtopenmaps.openlayers.client.layer.WMSParams;
+import org.gwtopenmaps.openlayers.client.layer.XYZ;
+import org.gwtopenmaps.openlayers.client.layer.XYZOptions;
 
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -95,8 +97,13 @@ public class PlaceMapWidget implements IsWidget {
 		
 		map.addLayer(tempLayer);
 		
-//		this.addSingleLayerXYZ("OpenLayers XYZ", "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer");
-//		this.setBaseLayer("OpenLayers XYZ");
+		XYZOptions options = new XYZOptions();
+		options.setSphericalMercator(true);
+		XYZ layer = new XYZ("ArcGIS", "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/${z}/${y}/${x}", options);
+//		XYZ layer = new XYZ("ArcGIS", "http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/${z}/${y}/${x}", options);
+		
+		map.addLayer(layer);
+		map.setBaseLayer(layer);
 		
 		clickControlOptions = new SelectFeatureOptions();
 		diaryControl = new SelectFeature(diaryVectorLayer, clickControlOptions);
