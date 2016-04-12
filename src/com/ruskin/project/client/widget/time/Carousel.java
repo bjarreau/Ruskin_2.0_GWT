@@ -85,6 +85,7 @@ public class Carousel implements IsWidget {
 
 		master.getMap().printContacts(list);
 		master.getMap().getVectorLayer().redraw();
+		System.out.println("Current layer: " + master.getMap().getVectorLayer().getName());
 	}
     
 	private void genButtons() {

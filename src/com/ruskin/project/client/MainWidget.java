@@ -10,10 +10,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.ruskin.project.client.dialog.contact.AllDialog;
-import com.ruskin.project.client.dialog.contact.DiaryLayerDialog;
-import com.ruskin.project.client.dialog.contact.RuskinDialog;
 import com.ruskin.project.client.lists.AllList;
-import com.ruskin.project.client.lists.JJList;
 import com.ruskin.project.client.lists.MaryList;
 import com.ruskin.project.client.lists.PassThrough;
 import com.ruskin.project.client.widget.mapwidget.LayerSwitcher;
@@ -31,13 +28,10 @@ public class MainWidget implements IsWidget {
 	private final Carousel timePanel;
 	private VerticalPanel mainPanel = new VerticalPanel();	
 	private final PlaceMapWidget placesMap;
-	private final DiaryLayerDialog diaryDialog;
-	private final RuskinDialog ruskinDialog;
 	private final AllDialog allDialog;
 	
 	private final AllList All = new AllList();
 	private final MaryList Mary = new MaryList();
-	private final JJList JohnJames = new JJList();
 	private final PassThrough Pass = new PassThrough();
 	
 	private final LayerSwitcher switcher;
@@ -47,8 +41,6 @@ public class MainWidget implements IsWidget {
 		placesMap = new PlaceMapWidget(this);
 		switcher = new LayerSwitcher(this);
 		timePanel = new Carousel(this);
-		diaryDialog = new DiaryLayerDialog(this);
-		ruskinDialog = new RuskinDialog(this);
 		allDialog = new AllDialog(this);
 		
 		this.buildUI();		
@@ -87,14 +79,6 @@ public class MainWidget implements IsWidget {
 	
 	public Carousel getTimeWidget() {
 		return timePanel;
-	}
-	
-	public DiaryLayerDialog getDiaryDialog() {
-		return diaryDialog;
-	}
-	
-	public RuskinDialog getRuskinDialog() {
-		return ruskinDialog;
 	}
 	
 	public AllDialog getAllDialog() {

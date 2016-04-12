@@ -15,6 +15,80 @@
     color: white;
 }
 
+.dialogPanel {
+	background: #3B5786 !important;
+	color: white;
+	border: #172133 !important;
+	border-radius: 5px;
+}
+
+.dialogTable {
+	color: #172133 !important;
+	border: 1 px solid #172133;
+}
+
+.dialogTableHeader {
+	color: white !important;
+	background: #172133;
+	font:  bold 13px serif !important;
+	box-shadow: none !important;
+	border: 1 px solid #172133;
+}
+
+.gwt-DialogBox {
+	background: #172133;
+	border-radius: 5px;
+}
+
+.gwt-DialogBox .dialogContent{
+	background: #172133;
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+  	padding: none !important;
+  	background: #172133 !important;
+}
+.gwt-DialogBox .dialogMiddleLeft {
+  	padding: none !important;
+  	background: #172133 !important;
+}
+.gwt-DialogBox .dialogMiddleRight {
+ 	padding: none !important;
+ 	background: #172133 !important;
+}
+.gwt-DialogBox .dialogBottomCenter {
+    padding: none !important;
+ 	background: #172133 !important;
+}
+
+.gwt-DialogBox .dialogTopLeft {
+   	padding: none !important;
+ 	background: #172133 !important;
+}
+.gwt-DialogBox .dialogTopRight {
+   	padding: none !important;
+ 	background: #172133 !important;
+}
+
+.gwt-DialogBox .dialogBottomLeftInner {
+  	padding: none !important;
+ 	background: #172133 !important;
+}
+.gwt-DialogBox .dialogBottomRightInner {
+  	padding: none !important;
+ 	background: #172133 !important;
+}
+
+.gwt-DialogBox .Caption {
+	background: #172133 !important;
+  	text-align: center !important;
+  	color: white !important;
+  	padding: 4px #172133 !important;
+  	font:  bold 18px serif !important;
+  	font-weight: bold !important;
+  	border: #172133 !important;
+}
+
 .titleContainer{
 	background-color: #172133;
 	height: 50px;
@@ -29,7 +103,7 @@
 }
 
 .perspective {
-	background-color:  #3B5786;
+	background-color: #3B5786;
 	color: white;
 	font: bold 20px sans-serif;	
 	border-radius: 5px;
@@ -76,4 +150,12 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.passLbl {
+	width: 100%;
+	text-align: center;
+	color: #172133;
+	background-color: gray;
+	font: bold 20px serif;
 }
