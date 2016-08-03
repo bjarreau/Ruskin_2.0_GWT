@@ -7,7 +7,20 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>projectManagerServlet</servlet-name>
-    <servlet-class>com.ruskin.project.server.ContactServiceImpl</servlet-class>
+    <servlet-class>com.ruskin.project.server.ServiceImpl</servlet-class>
+ 
+	<init-param>
+	    <param-name>wmsBaseLayer</param-name>
+			<param-value>http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/${z}/${y}/${x}</param-value>
+<!-- 			<param-value>http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/$%7Bz%7D/$%7By%7D/$%7Bx%7D</param-value> -->
+			<description> A url leading to a map layer. </description>
+	</init-param>	
+	
+	<init-param>	
+		<param-name>wmsLayerNames</param-name>
+			<param-value>ArcGIS</param-value>
+			<description> A comma separated list of layer names. Default is 'bluemarble'. </description>
+	</init-param>
   </servlet>
   
   <servlet-mapping>

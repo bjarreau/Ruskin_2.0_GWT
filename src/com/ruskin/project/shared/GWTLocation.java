@@ -1,7 +1,7 @@
 package com.ruskin.project.shared;
 
 
-public class GWTContact extends ReducedContact{
+public class GWTLocation extends ReducedLocation{
 
 	private String Departtime;
 	private String Arrivaltime;
@@ -12,12 +12,12 @@ public class GWTContact extends ReducedContact{
 	private String author;
 	private int dateRef;
 	
-	public GWTContact() {
+	public GWTLocation() {
 		super();
 	}
 
-	public static GWTContact createGWTContact(String id){
-		GWTContact contact = new GWTContact();
+	public static GWTLocation createGWTContact(String id){
+		GWTLocation contact = new GWTLocation();
 		contact.id = id;
 		return contact;	
 	}	

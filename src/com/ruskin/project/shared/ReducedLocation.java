@@ -4,7 +4,7 @@ import org.gwtopenmaps.openlayers.client.LonLat;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-public class ReducedContact implements IsSerializable {
+public class ReducedLocation implements IsSerializable {
 	
 	
 	protected String id;
@@ -12,12 +12,12 @@ public class ReducedContact implements IsSerializable {
 	private double latitude;
 	
 	
-	public ReducedContact(){
+	public ReducedLocation(){
 		
 		
 	}	
 	
-	public ReducedContact(String id, double lon, double lat){
+	public ReducedLocation(String id, double lon, double lat){
 		this.id = id;
 		this.longitude = lon;
 		this.latitude = lat;		

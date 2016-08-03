@@ -3,20 +3,20 @@ package com.ruskin.project.client.lists;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ruskin.project.shared.GWTContact;
-import com.ruskin.project.shared.ReducedContact;
+import com.ruskin.project.shared.GWTLocation;
+import com.ruskin.project.shared.ReducedLocation;
 
-public class MaryList extends ArrayList<GWTContact>{
+public class MaryList extends ArrayList<GWTLocation>{
 	
-	static List<GWTContact> list = new ArrayList<>();
+	static List<GWTLocation> list = new ArrayList<>();
 	
 	public MaryList() {
 		buildList();
 	}
 
-	private List<GWTContact> buildList() {
+	private List<GWTLocation> buildList() {
 		
-		GWTContact gwtC = GWTContact.createGWTContact("London");
+		GWTLocation gwtC = GWTLocation.createGWTContact("London");
 		gwtC.setCountry("Great Britain");
 		gwtC.setLocation("London");
 		gwtC.setLatitude(51.50853);
@@ -24,7 +24,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC.setArrivalDate("N/A");
 		gwtC.setDepartDate("14 May, 1833");
 		
-		GWTContact gwtC2 = GWTContact.createGWTContact("Dover");
+		GWTLocation gwtC2 = GWTLocation.createGWTContact("Dover");
 		gwtC2.setCountry("Great Britain");
 		gwtC2.setLocation("Dover");
 		gwtC2.setLongitude(1.3);
@@ -32,7 +32,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC2.setArrivalDate("14 May, 1833");
 		gwtC2.setDepartDate("15 May, 1833");
 		
-		GWTContact gwtC3 = GWTContact.createGWTContact("Calais");
+		GWTLocation gwtC3 = GWTLocation.createGWTContact("Calais");
 		gwtC3.setCountry("France");
 		gwtC3.setLocation("Calais");
 		gwtC3.setLongitude(1.85635);
@@ -41,7 +41,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC3.setDepartDate("16 May, 1833");
 		gwtC3.setSights("L'hotel de Bourbon or Rossignol, Cathedral");
 		
-		GWTContact gwtC4 = GWTContact.createGWTContact("Cassel");
+		GWTLocation gwtC4 = GWTLocation.createGWTContact("Cassel");
 		gwtC4.setCountry("France");
 		gwtC4.setLocation("Cassel");
 		gwtC4.setLongitude(2.48527);
@@ -50,7 +50,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC4.setDepartDate("17 May, 1833");
 		gwtC4.setSights("Hotel d'Angleterre, Ascension Day procession");
 		
-		GWTContact gwtC5 = GWTContact.createGWTContact("Lille");
+		GWTLocation gwtC5 = GWTLocation.createGWTContact("Lille");
 		gwtC5.setCountry("France");
 		gwtC5.setLocation("Lille");
 		gwtC5.setLongitude(3.05858);
@@ -60,7 +60,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC5.setSights("Cathedral, Citadel");
 
 		
-		GWTContact gwtC6 = GWTContact.createGWTContact("Brussels");
+		GWTLocation gwtC6 = GWTLocation.createGWTContact("Brussels");
 		gwtC6.setCountry("Belgium");
 		gwtC6.setLocation("Brussels");
 		gwtC6.setLongitude(4.34878);
@@ -69,7 +69,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC6.setDepartDate("22 May, 1833");
 		gwtC6.setSights("Market Place, Hotel de Ville, Place Royale, English Church behind House of Representatives, Laken, Palais d'Orange, Cathedral, Jardin des Plantes");
 		
-		GWTContact gwtC7 = GWTContact.createGWTContact("Namur");
+		GWTLocation gwtC7 = GWTLocation.createGWTContact("Namur");
 		gwtC7.setCountry("Belgium");
 		gwtC7.setLocation("Namur");
 		gwtC7.setLongitude(4.86746);
@@ -78,7 +78,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC7.setDepartDate("23 May, 1833");
 		gwtC7.setSights("Meuse, Sambre, Citadel of Namur");
 		
-		GWTContact gwtC8 = GWTContact.createGWTContact("Spa");
+		GWTLocation gwtC8 = GWTLocation.createGWTContact("Spa");
 		gwtC8.setCountry("Belgium");
 		gwtC8.setLocation("Spa");
 		gwtC8.setLongitude(5.86674);
@@ -87,7 +87,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC8.setDepartDate("24 May, 1833");
 		gwtC8.setSights("Mineral Waters, Church--Mass for the Dead--22 Death's heads");
 		
-		GWTContact gwtC9 = GWTContact.createGWTContact("Aix-la-Chapelle");
+		GWTLocation gwtC9 = GWTLocation.createGWTContact("Aix-la-Chapelle");
 		gwtC9.setCountry("Germany");
 		gwtC9.setLocation("Aix-la-Chapelle");
 		gwtC9.setLongitude(6.0917);
@@ -96,7 +96,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC9.setDepartDate("25 May, 1833");
 		gwtC9.setSights("Cathedral, Hotel de Ville");
 		
-		GWTContact gwtC10 = GWTContact.createGWTContact("Cologne");
+		GWTLocation gwtC10 = GWTLocation.createGWTContact("Cologne");
 		gwtC10.setCountry("Germany");
 		gwtC10.setLocation("Cologne");
 		gwtC10.setLongitude(6.93487);
@@ -105,7 +105,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC10.setDepartDate("28 May, 1833");
 		gwtC10.setSights("Reinbergy Hotel, Hotel Couronne Impèriale, Mass, St. Gereon, Private Picture Collection, Rubens' birthhouse, St Peter's, Bridge of Boats");
 		
-		GWTContact gwtC11 = GWTContact.createGWTContact("Andernach");
+		GWTLocation gwtC11 = GWTLocation.createGWTContact("Andernach");
 		gwtC11.setCountry("Germany");
 		gwtC11.setLocation("Andernach");
 		gwtC11.setLongitude(7.4004);
@@ -114,7 +114,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC11.setDepartDate("29 May, 1833");
 		gwtC11.setSights("Roman Tower, Church");
 		
-		GWTContact gwtC12 = GWTContact.createGWTContact("Coblentz");
+		GWTLocation gwtC12 = GWTLocation.createGWTContact("Coblentz");
 		gwtC12.setCountry("Germany");
 		gwtC12.setLocation("Coblentz");
 		gwtC12.setLongitude(7.584881);
@@ -123,7 +123,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC12.setDepartDate("30 May, 1833");
 		gwtC12.setSights("Hotel Cheval Blanc, Ehrbreitstein Fortress");
 		
-		GWTContact gwtC13 = GWTContact.createGWTContact("Bingen");
+		GWTLocation gwtC13 = GWTLocation.createGWTContact("Bingen");
 		gwtC13.setCountry("Germany");
 		gwtC13.setLocation("Bingen");
 		gwtC13.setLongitude(7.89);
@@ -132,7 +132,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC13.setDepartDate("31 May, 1833");
 		gwtC13.setSights("Hotel Chenin Blanc");
 		
-		GWTContact gwtC14 = GWTContact.createGWTContact("Mayence");
+		GWTLocation gwtC14 = GWTLocation.createGWTContact("Mayence");
 		gwtC14.setCountry("Germany");
 		gwtC14.setLocation("Mayence");
 		gwtC14.setLongitude(8.263507);
@@ -141,7 +141,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC14.setDepartDate("1 June, 1833");
 		gwtC14.setSights("Hotel, Cathedral");
 		
-		GWTContact gwtC15 = GWTContact.createGWTContact("Frankfurt");
+		GWTLocation gwtC15 = GWTLocation.createGWTContact("Frankfurt");
 		gwtC15.setCountry("Germany");
 		gwtC15.setLocation("Frankfurt");
 		gwtC15.setLongitude(8.66958);
@@ -150,7 +150,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC15.setDepartDate("4 June, 1833");
 		gwtC15.setSights("Hotel de Russie, German Protestant Church, Cemetary, Forest");
 		
-		GWTContact gwtC16 = GWTContact.createGWTContact("Heidelberg");
+		GWTLocation gwtC16 = GWTLocation.createGWTContact("Heidelberg");
 		gwtC16.setCountry("Germany");
 		gwtC16.setLocation("Heidelberg");
 		gwtC16.setLongitude(8.68885);
@@ -159,7 +159,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC16.setDepartDate("5 June, 1833");
 		gwtC16.setSights("Bridge, Castle Ruins, Castle, Heidelberg Tun");
 		
-		GWTContact gwtC17 = GWTContact.createGWTContact("Carlsruhe");
+		GWTLocation gwtC17 = GWTLocation.createGWTContact("Carlsruhe");
 		gwtC17.setCountry("Germany");
 		gwtC17.setLocation("Carlsruhe");
 		gwtC17.setLongitude(8.394302);
@@ -168,7 +168,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC17.setDepartDate("6 June, 1833");
 		gwtC17.setSights("Botanical Gardens, Churches");
 		
-		GWTContact gwtC18 = GWTContact.createGWTContact("Kehl");
+		GWTLocation gwtC18 = GWTLocation.createGWTContact("Kehl");
 		gwtC18.setCountry("Germany");
 		gwtC18.setLocation("Kehl");
 		gwtC18.setLongitude(7.817);
@@ -178,7 +178,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC18.setSights("French Custom House, Strasbourg Cathedral, Church of St."
 				+ "Thomas, Marechal Comte de Saxe monument");
 		
-		GWTContact gwtC19 = GWTContact.createGWTContact("Schaffhausen");
+		GWTLocation gwtC19 = GWTLocation.createGWTContact("Schaffhausen");
 		gwtC19.setCountry("Switzerland");
 		gwtC19.setLocation("Schaffhausen");
 		gwtC19.setLongitude(8.63493);
@@ -188,7 +188,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC19.setSights("Citadel, Public Walks, 'Saw snowy summit of Alps', "
 				+ "Fall of the Rhine, Camera Obscura");
 		
-		GWTContact gwtC20 = GWTContact.createGWTContact("Lake Constance");
+		GWTLocation gwtC20 = GWTLocation.createGWTContact("Lake Constance");
 		gwtC20.setCountry("Switzerland");
 		gwtC20.setLocation("Lake Constance");
 		gwtC20.setLongitude(9.46667);
@@ -196,7 +196,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC20.setArrivalDate("10 June, 1833");
 		gwtC20.setDepartDate("11 June, 1833");
 		
-		GWTContact gwtC21 = GWTContact.createGWTContact("Pfeffers");
+		GWTLocation gwtC21 = GWTLocation.createGWTContact("Pfeffers");
 		gwtC21.setCountry("Switzerland");
 		gwtC21.setLocation("Pfeffers");
 		gwtC21.setLongitude(9.44103);
@@ -204,7 +204,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC21.setArrivalDate("11 June, 1833");
 		gwtC21.setDepartDate("12 June, 1833");
 		
-		GWTContact gwtC22 = GWTContact.createGWTContact("Coire");
+		GWTLocation gwtC22 = GWTLocation.createGWTContact("Coire");
 		gwtC22.setCountry("Switzerland");
 		gwtC22.setLocation("Coire");
 		gwtC22.setLongitude(9.53287);
@@ -212,7 +212,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC22.setArrivalDate("12 June, 1833");
 		gwtC22.setDepartDate("13 June, 1833");
 		
-		GWTContact gwtC23 = GWTContact.createGWTContact("Chiavenna");
+		GWTLocation gwtC23 = GWTLocation.createGWTContact("Chiavenna");
 		gwtC23.setCountry("Italy");
 		gwtC23.setLocation("Chiavenna");
 		gwtC23.setLongitude(9.39816);
@@ -220,7 +220,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC23.setArrivalDate("13 June, 1833");
 		gwtC23.setDepartDate("14 June, 1833");
 		
-		GWTContact gwtC24 = GWTContact.createGWTContact("Cadenabbia");
+		GWTLocation gwtC24 = GWTLocation.createGWTContact("Cadenabbia");
 		gwtC24.setCountry("Italy");
 		gwtC24.setLocation("Cadenabbia");
 		gwtC24.setLongitude(9.23615);
@@ -230,7 +230,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC24.setSights("Hotel, Villa Somariva, Terraces, Mass(Sacrament Sunday),"
 				+ " Fiume Latte, Villa Venina, Villa Melzi");
 		
-		GWTContact gwtC25 = GWTContact.createGWTContact("Como");
+		GWTLocation gwtC25 = GWTLocation.createGWTContact("Como");
 		gwtC25.setCountry("Italy");
 		gwtC25.setLocation("Como");
 		gwtC25.setLongitude(9.08744);
@@ -239,7 +239,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC25.setDepartDate("18 June, 1833");
 		gwtC25.setSights("Cathedral");
 		
-		GWTContact gwtC26 = GWTContact.createGWTContact("Milan");
+		GWTLocation gwtC26 = GWTLocation.createGWTContact("Milan");
 		gwtC26.setCountry("Italy");
 		gwtC26.setLocation("Milan");
 		gwtC26.setLongitude(9.183058);
@@ -250,7 +250,7 @@ public class MaryList extends ArrayList<GWTContact>{
 				+ " Canobiano Opera, Emperor's Palace, Palazzo Tito, Ambrosian"
 				+ " Library, Corso, Marengo Gate, S. Lorenzo, La Scala");
 
-		GWTContact gwtC27 = GWTContact.createGWTContact("Pavia");
+		GWTLocation gwtC27 = GWTLocation.createGWTContact("Pavia");
 		gwtC27.setCountry("Italy");
 		gwtC27.setLocation("Pavia");
 		gwtC27.setLongitude(9.16145);
@@ -259,7 +259,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC27.setDepartDate("21 June, 1833");
 		gwtC27.setSights("Rice Field, Certosa, 'Young Men(students)', Custom House");
 		
-		GWTContact gwtC28 = GWTContact.createGWTContact("Novi");
+		GWTLocation gwtC28 = GWTLocation.createGWTContact("Novi");
 		gwtC28.setCountry("Italy");
 		gwtC28.setLocation("Novi");
 		gwtC28.setLongitude(8.787);
@@ -267,7 +267,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC28.setArrivalDate("21 June, 1833");
 		gwtC28.setDepartDate("22 June, 1833");
 		
-		GWTContact gwtC29 = GWTContact.createGWTContact("Genoa");
+		GWTLocation gwtC29 = GWTLocation.createGWTContact("Genoa");
 		gwtC29.setCountry("Italy");
 		gwtC29.setLocation("Genoa");
 		gwtC29.setLongitude(8.95729);
@@ -278,7 +278,7 @@ public class MaryList extends ArrayList<GWTContact>{
 				+ "University, Palazzo Sera, Doge's Palace, Palazzo Durazzo, "
 				+ "Lord Byron's House, Opera 'Anna Boleyna'");
 		
-		GWTContact gwtC30 = GWTContact.createGWTContact("Alexandria");
+		GWTLocation gwtC30 = GWTLocation.createGWTContact("Alexandria");
 		gwtC30.setCountry("Italy");
 		gwtC30.setLocation("Alexandria");
 		gwtC30.setLongitude(8.61);
@@ -286,7 +286,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC30.setArrivalDate("25 June, 1833");
 		gwtC30.setDepartDate("26 June, 1833");
 		
-		GWTContact gwtC31 = GWTContact.createGWTContact("Turin");
+		GWTLocation gwtC31 = GWTLocation.createGWTContact("Turin");
 		gwtC31.setCountry("Italy");
 		gwtC31.setLocation("Turin");
 		gwtC31.setLongitude(7.73357);
@@ -296,7 +296,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC31.setSights("Strada del Po, St. Peter's Day, Royal Chapel, "
 				+ "Opera 'Barbiere di Seviglia' in Argens Theatre, Villa Regina");
 		
-		GWTContact gwtC32 = GWTContact.createGWTContact("Navaro");
+		GWTLocation gwtC32 = GWTLocation.createGWTContact("Navaro");
 		gwtC32.setCountry("Italy");
 		gwtC32.setLocation("Navaro");
 		gwtC32.setLongitude(8.62328);
@@ -305,7 +305,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC32.setDepartDate("2 July, 1833");
 		gwtC32.setSights("Cathedral");
 		
-		GWTContact gwtC33 = GWTContact.createGWTContact("Arona");
+		GWTLocation gwtC33 = GWTLocation.createGWTContact("Arona");
 		gwtC33.setCountry("Italy");
 		gwtC33.setLocation("Arona");
 		gwtC33.setLongitude(8.55715);
@@ -314,7 +314,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC33.setDepartDate("4 July, 1833");
 		gwtC33.setSights("Lake Maggiore, 'Colossal Statue of S. Carlo Borromeo'");
 		
-		GWTContact gwtC34 = GWTContact.createGWTContact("Duomo d'Ossala");
+		GWTLocation gwtC34 = GWTLocation.createGWTContact("Duomo d'Ossala");
 		gwtC34.setCountry("Italy");
 		gwtC34.setLocation("Duomo d'Ossala");
 		gwtC34.setLongitude(8.29313);
@@ -322,7 +322,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC34.setArrivalDate("4 July, 1833");
 		gwtC34.setDepartDate("5 July, 1833");
 		
-		GWTContact gwtC35 = GWTContact.createGWTContact("Sion");
+		GWTLocation gwtC35 = GWTLocation.createGWTContact("Sion");
 		gwtC35.setCountry("Switzerland");
 		gwtC35.setLocation("Sion");
 		gwtC35.setLongitude(7.3667);
@@ -331,7 +331,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC35.setDepartDate("8 July, 1833");
 		gwtC35.setSights("Hermitage");
 		
-		GWTContact gwtC36 = GWTContact.createGWTContact("Martigny");
+		GWTLocation gwtC36 = GWTLocation.createGWTContact("Martigny");
 		gwtC36.setCountry("Switzerland");
 		gwtC36.setLocation("Martigny");
 		gwtC36.setLongitude(7.0667);
@@ -339,7 +339,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC36.setArrivalDate("8 July, 1833");
 		gwtC36.setDepartDate("9 July, 1833");
 		
-		GWTContact gwtC37 = GWTContact.createGWTContact("St. Bernard Convent");
+		GWTLocation gwtC37 = GWTLocation.createGWTContact("St. Bernard Convent");
 		gwtC37.setCountry("Switzerland");
 		gwtC37.setLocation("St. Bernard Convent");
 		gwtC37.setLongitude(7);
@@ -347,7 +347,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC37.setArrivalDate("9 July, 1833");
 		gwtC37.setDepartDate("10 July, 1833");
 		
-		GWTContact gwtC39 = GWTContact.createGWTContact("Bex");
+		GWTLocation gwtC39 = GWTLocation.createGWTContact("Bex");
 		gwtC39.setCountry("Switzerland");
 		gwtC39.setLocation("Bex");
 		gwtC39.setLongitude(7.0167);
@@ -356,7 +356,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC39.setDepartDate("12 July, 1833");
 		gwtC39.setSights("Union Inn(JJR), Geneva Lake");
 		
-		GWTContact gwtC40 = GWTContact.createGWTContact("Lausanne");
+		GWTLocation gwtC40 = GWTLocation.createGWTContact("Lausanne");
 		gwtC40.setCountry("Switzerland");
 		gwtC40.setLocation("Lausanne");
 		gwtC40.setLongitude(6.6335);
@@ -365,7 +365,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC40.setDepartDate("15 July, 1833");
 		gwtC40.setSights("Gibbon's House, Kemble's House");
 		
-		GWTContact gwtC41 = GWTContact.createGWTContact("Fribourg");
+		GWTLocation gwtC41 = GWTLocation.createGWTContact("Fribourg");
 		gwtC41.setCountry("Switzerland");
 		gwtC41.setLocation("Fribourg");
 		gwtC41.setLongitude(7.15);
@@ -375,7 +375,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC41.setSights("Cathedral, Convent, Capuchins Monastary,"
 				+ " College of Jesuits, Nunnery on the Hill(JJR)");
 		
-		GWTContact gwtC42 = GWTContact.createGWTContact("Berne");
+		GWTLocation gwtC42 = GWTLocation.createGWTContact("Berne");
 		gwtC42.setCountry("Switzerland");
 		gwtC42.setLocation("Berne");
 		gwtC42.setLongitude(7.45);
@@ -385,7 +385,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC42.setSights("Hotel de Couronne, Museum, Agricultural Establishment "
 				+ "under Mr. Felebourough(or Tellenberg)");
 		
-		GWTContact gwtC43 = GWTContact.createGWTContact("Interlaken");
+		GWTLocation gwtC43 = GWTLocation.createGWTContact("Interlaken");
 		gwtC43.setCountry("Switzerland");
 		gwtC43.setLocation("Interlaken");
 		gwtC43.setLongitude(7.85);
@@ -394,7 +394,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC43.setDepartDate("20 July, 1833");
 		gwtC43.setSights("Lake Brienz/Giesbach(finest waterfall)/Swiss family singing");
 		
-		GWTContact gwtC44 = GWTContact.createGWTContact("Berne-2");
+		GWTLocation gwtC44 = GWTLocation.createGWTContact("Berne-2");
 		gwtC44.setCountry("Switzerland");
 		gwtC44.setLocation("Berne");
 		gwtC44.setLongitude(7.45);
@@ -402,7 +402,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC44.setArrivalDate("20 July, 1833");
 		gwtC44.setDepartDate("22 July, 1833");
 		
-		GWTContact gwtC45 = GWTContact.createGWTContact("Sursees");
+		GWTLocation gwtC45 = GWTLocation.createGWTContact("Sursees");
 		gwtC45.setCountry("Switzerland");
 		gwtC45.setLocation("Sursees");
 		gwtC45.setLongitude(8.1167);
@@ -411,7 +411,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC45.setDepartDate("23 July, 1833");
 		gwtC45.setSights("Lake of Sempach");
 		
-		GWTContact gwtC46 = GWTContact.createGWTContact("Lucerne");
+		GWTLocation gwtC46 = GWTLocation.createGWTContact("Lucerne");
 		gwtC46.setCountry("Switzerland");
 		gwtC46.setLocation("Lucerne");
 		gwtC46.setLongitude(8.3);
@@ -422,7 +422,7 @@ public class MaryList extends ArrayList<GWTContact>{
 				+ "covered bridges, Reuss River, Monument to Swiss Guards,"
 				+ " General Pfyffer's 'Celebrated relieve topographical chart'");
 		
-		GWTContact gwtC47 = GWTContact.createGWTContact("Arth");
+		GWTLocation gwtC47 = GWTLocation.createGWTContact("Arth");
 		gwtC47.setCountry("Switzerland");
 		gwtC47.setLocation("Arth");
 		gwtC47.setLongitude(8.5218);
@@ -430,7 +430,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC47.setArrivalDate("24 July, 1833");
 		gwtC47.setDepartDate("26 July, 1833");
 		
-		GWTContact gwtC48 = GWTContact.createGWTContact("Einsiedeln");
+		GWTLocation gwtC48 = GWTLocation.createGWTContact("Einsiedeln");
 		gwtC48.setCountry("Switzerland");
 		gwtC48.setLocation("Einsiedeln");
 		gwtC48.setLongitude(8.7443);
@@ -439,7 +439,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC48.setDepartDate("27 July, 1833");
 		gwtC48.setSights("Einsiedeln Abbey");
 		
-		GWTContact gwtC49 = GWTContact.createGWTContact("Rapperswill");
+		GWTLocation gwtC49 = GWTLocation.createGWTContact("Rapperswill");
 		gwtC49.setCountry("Switzerland");
 		gwtC49.setLocation("Rapperswill");
 		gwtC49.setLongitude(8.8565);
@@ -448,7 +448,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC49.setDepartDate("30 July, 1833");
 		gwtC49.setSights("Peacock Inn(JR ill), view of Lake Zurich");
 		
-		GWTContact gwtC50 = GWTContact.createGWTContact("Zurich");
+		GWTLocation gwtC50 = GWTLocation.createGWTContact("Zurich");
 		gwtC50.setCountry("Switzerland");
 		gwtC50.setLocation("Zurich");
 		gwtC50.setLongitude(8.55);
@@ -458,7 +458,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC50.setSights("Hotel, Bridge Market, Museum/Lirary, forming for battle "
 				+ "to keep possession of refactory canton of Schwytz");
 		
-		GWTContact gwtC51 = GWTContact.createGWTContact("Baden");
+		GWTLocation gwtC51 = GWTLocation.createGWTContact("Baden");
 		gwtC51.setCountry("Switzerland");
 		gwtC51.setLocation("Baden");
 		gwtC51.setLongitude(8.3);
@@ -467,7 +467,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC51.setDepartDate("5 August, 1833");
 		gwtC51.setSights("Sword Inn");
 		
-		GWTContact gwtC52 = GWTContact.createGWTContact("Basel");
+		GWTLocation gwtC52 = GWTLocation.createGWTContact("Basel");
 		gwtC52.setCountry("Switzerland");
 		gwtC52.setLocation("Basel");
 		gwtC52.setLongitude(7.6);
@@ -476,7 +476,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC52.setDepartDate("6 August, 1833");
 		gwtC52.setSights("Three Kings Inn, cathedral, town on alert for battle");
 		
-		GWTContact gwtC53 = GWTContact.createGWTContact("Bienne");
+		GWTLocation gwtC53 = GWTLocation.createGWTContact("Bienne");
 		gwtC53.setCountry("Switzerland");
 		gwtC53.setLocation("Bienne");
 		gwtC53.setLongitude(7.25);
@@ -484,7 +484,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC53.setArrivalDate("6 August, 1833");
 		gwtC53.setDepartDate("8 August, 1833");
 		
-		GWTContact gwtC54 = GWTContact.createGWTContact("Neufchatel");
+		GWTLocation gwtC54 = GWTLocation.createGWTContact("Neufchatel");
 		gwtC54.setCountry("Switzerland");
 		gwtC54.setLocation("Neufchatel");
 		gwtC54.setLongitude(6.9333);
@@ -493,7 +493,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC54.setDepartDate("9 August, 1833");
 		gwtC54.setSights("Citadel, NOTE: owned by Prussia at this time");
 		
-		GWTContact gwtC55 = GWTContact.createGWTContact("Morges");
+		GWTLocation gwtC55 = GWTLocation.createGWTContact("Morges");
 		gwtC55.setCountry("Switzerland");
 		gwtC55.setLocation("Morges");
 		gwtC55.setLongitude(6.5);
@@ -502,7 +502,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC55.setDepartDate("10 August, 1833");
 		gwtC55.setSights("Lake of Geneva");
 		
-		GWTContact gwtC56 = GWTContact.createGWTContact("Geneva");
+		GWTLocation gwtC56 = GWTLocation.createGWTContact("Geneva");
 		gwtC56.setCountry("Switzerland");
 		gwtC56.setLocation("Geneva");
 		gwtC56.setLongitude(6.15);
@@ -511,7 +511,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC56.setDepartDate("14 August, 1833");
 		gwtC56.setSights("Hotel des Etrangers, Mont Blanc, Mr. Botte's Showrooms");
 		
-		GWTContact gwtC57 = GWTContact.createGWTContact("Sallanches");
+		GWTLocation gwtC57 = GWTLocation.createGWTContact("Sallanches");
 		gwtC57.setCountry("France");
 		gwtC57.setLocation("Sallanches");
 		gwtC57.setLongitude(6.63162);
@@ -520,7 +520,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC57.setDepartDate("15 August, 1833");
 		
 		
-		GWTContact gwtC58 = GWTContact.createGWTContact("Chamouni");
+		GWTLocation gwtC58 = GWTLocation.createGWTContact("Chamouni");
 		gwtC58.setCountry("France");
 		gwtC58.setLocation("Chamouni");
 		gwtC58.setLongitude(6.86933);
@@ -528,7 +528,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC58.setArrivalDate("15 August, 1833");
 		gwtC58.setDepartDate("16 August, 1833");
 		
-		GWTContact gwtC59 = GWTContact.createGWTContact("Chamouni-2");
+		GWTLocation gwtC59 = GWTLocation.createGWTContact("Chamouni-2");
 		gwtC59.setCountry("France");
 		gwtC59.setLocation("Chamouni");
 		gwtC59.setLongitude(6.86933);
@@ -536,7 +536,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC59.setArrivalDate("18 August, 1833");
 		gwtC59.setDepartDate("19 August, 1833");
 		
-		GWTContact gwtC60 = GWTContact.createGWTContact("Geneva-2");
+		GWTLocation gwtC60 = GWTLocation.createGWTContact("Geneva-2");
 		gwtC60.setCountry("Switzerland");
 		gwtC60.setLocation("Geneva");
 		gwtC60.setLongitude(6.15);
@@ -546,7 +546,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC60.setSights("Nant d'Arpenaz, Marquis of Hertfod's Family, "
 				+ "English at Library, Opera, Voltaire's Residence");
 		
-		GWTContact gwtC61 = GWTContact.createGWTContact("Nantua");
+		GWTLocation gwtC61 = GWTLocation.createGWTContact("Nantua");
 		gwtC61.setCountry("France");
 		gwtC61.setLocation("Nantua");
 		gwtC61.setLongitude(5.61667);
@@ -555,7 +555,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC61.setDepartDate("23 August, 1833");
 		gwtC61.setSights("view of Mont Blanc on road to Lyons");
 		
-		GWTContact gwtC62 = GWTContact.createGWTContact("Lyon");
+		GWTLocation gwtC62 = GWTLocation.createGWTContact("Lyon");
 		gwtC62.setCountry("France");
 		gwtC62.setLocation("Lyon");
 		gwtC62.setLongitude(4.84671);
@@ -564,7 +564,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC62.setDepartDate("26 August, 1833");
 		gwtC62.setSights("Hotel de Europe, manufacturies, Museum");
 		
-		GWTContact gwtC63 = GWTContact.createGWTContact("Chalons sur Saone");
+		GWTLocation gwtC63 = GWTLocation.createGWTContact("Chalons sur Saone");
 		gwtC63.setCountry("France");
 		gwtC63.setLocation("Chalons sur Saone");
 		gwtC63.setLongitude(6.11682);
@@ -572,7 +572,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC63.setArrivalDate("26 August, 1833");
 		gwtC63.setDepartDate("27 August, 1833");
 		
-		GWTContact gwtC64 = GWTContact.createGWTContact("Dijon");
+		GWTLocation gwtC64 = GWTLocation.createGWTContact("Dijon");
 		gwtC64.setCountry("France");
 		gwtC64.setLocation("Dijon");
 		gwtC64.setLongitude(5.01667);
@@ -582,7 +582,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC64.setSights("Clos Vougeot, palace of Duke of Burgundy, museum, "
 				+ "Hotel de la Cloche, wine cellars");
 		
-		GWTContact gwtC65 = GWTContact.createGWTContact("Fontainbleau");
+		GWTLocation gwtC65 = GWTLocation.createGWTContact("Fontainbleau");
 		gwtC65.setCountry("France");
 		gwtC65.setLocation("Fontainbleau");
 		gwtC65.setLongitude(2.7);
@@ -591,7 +591,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC65.setDepartDate("31 August, 1833");
 		gwtC65.setSights("Hotel de Ville de Lyons, palace, table where Napoleon signed abdication");
 		
-		GWTContact gwtC66 = GWTContact.createGWTContact("Paris");
+		GWTLocation gwtC66 = GWTLocation.createGWTContact("Paris");
 		gwtC66.setCountry("France");
 		gwtC66.setLocation("Paris");
 		gwtC66.setLongitude(2.3488);
@@ -601,7 +601,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC66.setSights("Hotel de Bristol Place Venodome, visited Mrs. Domecq, "
 				+ "opera, Louvre, St. Cloud, Versailles, English Church Service");
 		
-		GWTContact gwtC67 = GWTContact.createGWTContact("Chantilly");
+		GWTLocation gwtC67 = GWTLocation.createGWTContact("Chantilly");
 		gwtC67.setCountry("France");
 		gwtC67.setLocation("Chantilly");
 		gwtC67.setLongitude(2.47124);
@@ -610,7 +610,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC67.setDepartDate("17 September, 1833");
 		gwtC67.setSights("parks, palace");
 		
-		GWTContact gwtC68 = GWTContact.createGWTContact("Amiens");
+		GWTLocation gwtC68 = GWTLocation.createGWTContact("Amiens");
 		gwtC68.setCountry("France");
 		gwtC68.setLocation("Amiens");
 		gwtC68.setLongitude(2.3);
@@ -619,7 +619,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC68.setDepartDate("18 September, 1833");
 		gwtC68.setSights("cathedral");
 		
-		GWTContact gwtC69 = GWTContact.createGWTContact("Montreuil");
+		GWTLocation gwtC69 = GWTLocation.createGWTContact("Montreuil");
 		gwtC69.setCountry("France");
 		gwtC69.setLocation("Montreuil");
 		gwtC69.setLongitude(1.76667);
@@ -628,7 +628,7 @@ public class MaryList extends ArrayList<GWTContact>{
 		gwtC69.setDepartDate("19 September, 1833");
 		gwtC69.setSights("Hotel de l'Europe");
 		
-		GWTContact gwtC70 = GWTContact.createGWTContact("Calais-2");
+		GWTLocation gwtC70 = GWTLocation.createGWTContact("Calais-2");
 		gwtC70.setCountry("France");
 		gwtC70.setLocation("Calais");
 		gwtC70.setLongitude(1.85635);
@@ -714,8 +714,8 @@ public class MaryList extends ArrayList<GWTContact>{
 		return list;
 	}
 	
-	public static GWTContact getContact(String id) {
-		GWTContact c = new GWTContact();
+	public static GWTLocation getContact(String id) {
+		GWTLocation c = new GWTLocation();
 		int location = -1;
 		for (int i=0; i<list.size(); i++) {
 			if(list.get(i).getId().matches(id)) {
@@ -728,13 +728,13 @@ public class MaryList extends ArrayList<GWTContact>{
 		return c;
 	}
 	
-	public static List<GWTContact> getAllContacts() {
+	public static List<GWTLocation> getAllContacts() {
 		return list;
 	}
 	
 	
-	public static ReducedContact getReducedContact(int location) {
-		ReducedContact c = new ReducedContact(list.get(location).getId(), list.get(location).getLongitude(), list.get(location).getLatitude());
+	public static ReducedLocation getReducedContact(int location) {
+		ReducedLocation c = new ReducedLocation(list.get(location).getId(), list.get(location).getLongitude(), list.get(location).getLatitude());
 		return c;
 	}
 

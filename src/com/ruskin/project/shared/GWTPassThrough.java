@@ -1,6 +1,6 @@
 package com.ruskin.project.shared;
 
-public class GWTPassThrough extends ReducedContact{
+public class GWTPassThrough extends ReducedLocation{
 	private String Departtime;
 	private String Reference;
 	private String Arrivaltime;

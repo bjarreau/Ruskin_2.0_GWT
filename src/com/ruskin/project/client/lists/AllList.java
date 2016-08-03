@@ -3,20 +3,20 @@ package com.ruskin.project.client.lists;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ruskin.project.shared.GWTContact;
-import com.ruskin.project.shared.ReducedContact;
+import com.ruskin.project.shared.GWTLocation;
+import com.ruskin.project.shared.ReducedLocation;
 
-public class AllList extends ArrayList<GWTContact>{
+public class AllList extends ArrayList<GWTLocation>{
 	
-	static List<GWTContact> list = new ArrayList<>();
+	static List<GWTLocation> list = new ArrayList<>();
 	
 	public AllList() {
 		buildList();
 	}
 
-	private List<GWTContact> buildList() {
+	private List<GWTLocation> buildList() {
 		
-		GWTContact gwtC = GWTContact.createGWTContact("London");
+		GWTLocation gwtC = GWTLocation.createGWTContact("London");
 		gwtC.setCountry("Great Britain");
 		gwtC.setLocation("London");
 		gwtC.setLatitude(51.50853);
@@ -25,7 +25,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC.setDepartDate("14 May, 1833");
 		gwtC.setDateRef(0);
 		
-		GWTContact gwtC2 = GWTContact.createGWTContact("Dover");
+		GWTLocation gwtC2 = GWTLocation.createGWTContact("Dover");
 		gwtC2.setCountry("Great Britain");
 		gwtC2.setLocation("Dover");
 		gwtC2.setLongitude(1.3);
@@ -34,7 +34,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC2.setDepartDate("15 May, 1833");
 		gwtC2.setDateRef(514);
 		
-		GWTContact gwtC3 = GWTContact.createGWTContact("Calais");
+		GWTLocation gwtC3 = GWTLocation.createGWTContact("Calais");
 		gwtC3.setCountry("France");
 		gwtC3.setLocation("Calais");
 		gwtC3.setLongitude(1.85635);
@@ -44,7 +44,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC3.setSights("L'hotel de Bourbon or Rossignol, Cathedral");
 		gwtC3.setDateRef(515);
 		
-		GWTContact gwtC4 = GWTContact.createGWTContact("Cassel");
+		GWTLocation gwtC4 = GWTLocation.createGWTContact("Cassel");
 		gwtC4.setCountry("France");
 		gwtC4.setLocation("Cassel");
 		gwtC4.setLongitude(2.48527);
@@ -54,7 +54,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC4.setSights("Hotel d'Angleterre, Ascension Day procession");
 		gwtC4.setDateRef(516);
 		
-		GWTContact gwtC5 = GWTContact.createGWTContact("Lille");
+		GWTLocation gwtC5 = GWTLocation.createGWTContact("Lille");
 		gwtC5.setCountry("France");
 		gwtC5.setLocation("Lille");
 		gwtC5.setLongitude(3.05858);
@@ -64,7 +64,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC5.setSights("Cathedral, Citadel");
 		gwtC5.setDateRef(517);
 
-		GWTContact gwtC6 = GWTContact.createGWTContact("Brussels");
+		GWTLocation gwtC6 = GWTLocation.createGWTContact("Brussels");
 		gwtC6.setCountry("Belgium");
 		gwtC6.setLocation("Brussels");
 		gwtC6.setLongitude(4.34878);
@@ -74,7 +74,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC6.setSights("Market Place, Hotel de Ville, Place Royale, English Church behind House of Representatives, Laken, Palais d'Orange, Cathedral, Jardin des Plantes");
 		gwtC6.setDateRef(518);
 		
-		GWTContact gwtC7 = GWTContact.createGWTContact("Namur");
+		GWTLocation gwtC7 = GWTLocation.createGWTContact("Namur");
 		gwtC7.setCountry("Belgium");
 		gwtC7.setLocation("Namur");
 		gwtC7.setLongitude(4.86746);
@@ -84,7 +84,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC7.setSights("Meuse, Sambre, Citadel of Namur");
 		gwtC7.setDateRef(522);
 		
-		GWTContact gwtC8 = GWTContact.createGWTContact("Spa");
+		GWTLocation gwtC8 = GWTLocation.createGWTContact("Spa");
 		gwtC8.setCountry("Belgium");
 		gwtC8.setLocation("Spa");
 		gwtC8.setLongitude(5.86674);
@@ -94,7 +94,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC8.setSights("Mineral Waters, Church--Mass for the Dead--22 Death's heads");
 		gwtC8.setDateRef(523);
 		
-		GWTContact gwtC9 = GWTContact.createGWTContact("Aix-la-Chapelle");
+		GWTLocation gwtC9 = GWTLocation.createGWTContact("Aix-la-Chapelle");
 		gwtC9.setCountry("Germany");
 		gwtC9.setLocation("Aix-la-Chapelle");
 		gwtC9.setLongitude(6.0917);
@@ -104,7 +104,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC9.setSights("Cathedral, Hotel de Ville");
 		gwtC9.setDateRef(524);
 		
-		GWTContact gwtC10 = GWTContact.createGWTContact("Cologne");
+		GWTLocation gwtC10 = GWTLocation.createGWTContact("Cologne");
 		gwtC10.setCountry("Germany");
 		gwtC10.setLocation("Cologne");
 		gwtC10.setLongitude(6.93487);
@@ -114,7 +114,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC10.setSights("Reinbergy Hotel, Hotel Couronne Impèriale, Mass, St. Gereon, Private Picture Collection, Rubens' birthhouse, St Peter's, Bridge of Boats");
 		gwtC10.setDateRef(525);
 		
-		GWTContact gwtC11 = GWTContact.createGWTContact("Andernach");
+		GWTLocation gwtC11 = GWTLocation.createGWTContact("Andernach");
 		gwtC11.setCountry("Germany");
 		gwtC11.setLocation("Andernach");
 		gwtC11.setLongitude(7.4004);
@@ -124,7 +124,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC11.setSights("Roman Tower, Church");
 		gwtC11.setDateRef(528);
 		
-		GWTContact gwtC12 = GWTContact.createGWTContact("Coblentz");
+		GWTLocation gwtC12 = GWTLocation.createGWTContact("Coblentz");
 		gwtC12.setCountry("Germany");
 		gwtC12.setLocation("Coblentz");
 		gwtC12.setLongitude(7.584881);
@@ -134,7 +134,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC12.setSights("Hotel Cheval Blanc, Ehrbreitstein Fortress");
 		gwtC12.setDateRef(529);
 		
-		GWTContact gwtC13 = GWTContact.createGWTContact("Bingen");
+		GWTLocation gwtC13 = GWTLocation.createGWTContact("Bingen");
 		gwtC13.setCountry("Germany");
 		gwtC13.setLocation("Bingen");
 		gwtC13.setLongitude(7.89);
@@ -144,7 +144,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC13.setSights("Hotel Chenin Blanc");
 		gwtC13.setDateRef(530);
 		
-		GWTContact gwtC14 = GWTContact.createGWTContact("Mayence");
+		GWTLocation gwtC14 = GWTLocation.createGWTContact("Mayence");
 		gwtC14.setCountry("Germany");
 		gwtC14.setLocation("Mayence");
 		gwtC14.setLongitude(8.263507);
@@ -154,7 +154,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC14.setSights("Hotel, Cathedral");
 		gwtC14.setDateRef(531);
 		
-		GWTContact gwtC15 = GWTContact.createGWTContact("Frankfurt");
+		GWTLocation gwtC15 = GWTLocation.createGWTContact("Frankfurt");
 		gwtC15.setCountry("Germany");
 		gwtC15.setLocation("Frankfurt");
 		gwtC15.setLongitude(8.66958);
@@ -164,7 +164,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC15.setSights("Hotel de Russie, German Protestant Church, Cemetary, Forest");
 		gwtC15.setDateRef(601);
 		
-		GWTContact gwtC16 = GWTContact.createGWTContact("Heidelberg");
+		GWTLocation gwtC16 = GWTLocation.createGWTContact("Heidelberg");
 		gwtC16.setCountry("Germany");
 		gwtC16.setLocation("Heidelberg");
 		gwtC16.setLongitude(8.68885);
@@ -174,7 +174,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC16.setSights("Bridge, Castle Ruins, Castle, Heidelberg Tun");
 		gwtC16.setDateRef(604);
 		
-		GWTContact gwtC17 = GWTContact.createGWTContact("Carlsruhe");
+		GWTLocation gwtC17 = GWTLocation.createGWTContact("Carlsruhe");
 		gwtC17.setCountry("Germany");
 		gwtC17.setLocation("Carlsruhe");
 		gwtC17.setLongitude(8.394302);
@@ -184,7 +184,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC17.setSights("Botanical Gardens, Churches");
 		gwtC17.setDateRef(605);
 		
-		GWTContact gwtC18 = GWTContact.createGWTContact("Kehl");
+		GWTLocation gwtC18 = GWTLocation.createGWTContact("Kehl");
 		gwtC18.setCountry("Germany");
 		gwtC18.setLocation("Kehl");
 		gwtC18.setLongitude(7.817);
@@ -195,7 +195,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "Thomas, Marechal Comte de Saxe monument");
 		gwtC18.setDateRef(606);
 		
-		GWTContact gwtC19 = GWTContact.createGWTContact("Schaffhausen");
+		GWTLocation gwtC19 = GWTLocation.createGWTContact("Schaffhausen");
 		gwtC19.setCountry("Switzerland");
 		gwtC19.setLocation("Schaffhausen");
 		gwtC19.setLongitude(8.63493);
@@ -206,7 +206,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "Fall of the Rhine, Camera Obscura");
 		gwtC19.setDateRef(608);
 		
-		GWTContact gwtC20 = GWTContact.createGWTContact("Lake Constance");
+		GWTLocation gwtC20 = GWTLocation.createGWTContact("Lake Constance");
 		gwtC20.setCountry("Switzerland");
 		gwtC20.setLocation("Lake Constance");
 		gwtC20.setLongitude(9.46667);
@@ -215,7 +215,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC20.setDepartDate("11 June, 1833");
 		gwtC20.setDateRef(610);
 		
-		GWTContact gwtC21 = GWTContact.createGWTContact("Pfeffers");
+		GWTLocation gwtC21 = GWTLocation.createGWTContact("Pfeffers");
 		gwtC21.setCountry("Switzerland");
 		gwtC21.setLocation("Pfeffers");
 		gwtC21.setLongitude(9.44103);
@@ -224,7 +224,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC21.setDepartDate("12 June, 1833");
 		gwtC21.setDateRef(611);
 		
-		GWTContact gwtC22 = GWTContact.createGWTContact("Coire");
+		GWTLocation gwtC22 = GWTLocation.createGWTContact("Coire");
 		gwtC22.setCountry("Switzerland");
 		gwtC22.setLocation("Coire");
 		gwtC22.setLongitude(9.53287);
@@ -233,7 +233,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC22.setDepartDate("13 June, 1833");
 		gwtC22.setDateRef(612);
 		
-		GWTContact gwtC23 = GWTContact.createGWTContact("Chiavenna");
+		GWTLocation gwtC23 = GWTLocation.createGWTContact("Chiavenna");
 		gwtC23.setCountry("Italy");
 		gwtC23.setLocation("Chiavenna");
 		gwtC23.setLongitude(9.39816);
@@ -242,7 +242,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC23.setDepartDate("14 June, 1833");
 		gwtC23.setDateRef(613);
 		
-		GWTContact gwtC24 = GWTContact.createGWTContact("Cadenabbia");
+		GWTLocation gwtC24 = GWTLocation.createGWTContact("Cadenabbia");
 		gwtC24.setCountry("Italy");
 		gwtC24.setLocation("Cadenabbia");
 		gwtC24.setLongitude(9.23615);
@@ -253,7 +253,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ " Fiume Latte, Villa Venina, Villa Melzi");
 		gwtC24.setDateRef(614);
 		
-		GWTContact gwtC25 = GWTContact.createGWTContact("Como");
+		GWTLocation gwtC25 = GWTLocation.createGWTContact("Como");
 		gwtC25.setCountry("Italy");
 		gwtC25.setLocation("Como");
 		gwtC25.setLongitude(9.08744);
@@ -263,7 +263,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC25.setSights("Cathedral");
 		gwtC25.setDateRef(617);
 		
-		GWTContact gwtC26 = GWTContact.createGWTContact("Milan");
+		GWTLocation gwtC26 = GWTLocation.createGWTContact("Milan");
 		gwtC26.setCountry("Italy");
 		gwtC26.setLocation("Milan");
 		gwtC26.setLongitude(9.183058);
@@ -275,7 +275,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ " Library, Corso, Marengo Gate, S. Lorenzo, La Scala");
 		gwtC26.setDateRef(618);
 		
-		GWTContact gwtC27 = GWTContact.createGWTContact("Pavia");
+		GWTLocation gwtC27 = GWTLocation.createGWTContact("Pavia");
 		gwtC27.setCountry("Italy");
 		gwtC27.setLocation("Pavia");
 		gwtC27.setLongitude(9.16145);
@@ -285,7 +285,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC27.setSights("Rice Field, Certosa, 'Young Men(students)', Custom House");
 		gwtC27.setDateRef(620);
 		
-		GWTContact gwtC28 = GWTContact.createGWTContact("Novi");
+		GWTLocation gwtC28 = GWTLocation.createGWTContact("Novi");
 		gwtC28.setCountry("Italy");
 		gwtC28.setLocation("Novi");
 		gwtC28.setLongitude(8.787);
@@ -294,7 +294,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC28.setDepartDate("22 June, 1833");
 		gwtC28.setDateRef(621);
 		
-		GWTContact gwtC29 = GWTContact.createGWTContact("Genoa");
+		GWTLocation gwtC29 = GWTLocation.createGWTContact("Genoa");
 		gwtC29.setCountry("Italy");
 		gwtC29.setLocation("Genoa");
 		gwtC29.setLongitude(8.95729);
@@ -306,7 +306,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "Lord Byron's House, Opera 'Anna Boleyna'");
 		gwtC29.setDateRef(622);
 		
-		GWTContact gwtC30 = GWTContact.createGWTContact("Alexandria");
+		GWTLocation gwtC30 = GWTLocation.createGWTContact("Alexandria");
 		gwtC30.setCountry("Italy");
 		gwtC30.setLocation("Alexandria");
 		gwtC30.setLongitude(8.61);
@@ -315,7 +315,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC30.setDepartDate("26 June, 1833");
 		gwtC30.setDateRef(625);
 		
-		GWTContact gwtC31 = GWTContact.createGWTContact("Turin");
+		GWTLocation gwtC31 = GWTLocation.createGWTContact("Turin");
 		gwtC31.setCountry("Italy");
 		gwtC31.setLocation("Turin");
 		gwtC31.setLongitude(7.73357);
@@ -326,7 +326,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "Opera 'Barbiere di Seviglia' in Argens Theatre, Villa Regina");
 		gwtC31.setDateRef(626);
 		
-		GWTContact gwtC32 = GWTContact.createGWTContact("Navaro");
+		GWTLocation gwtC32 = GWTLocation.createGWTContact("Navaro");
 		gwtC32.setCountry("Italy");
 		gwtC32.setLocation("Navaro");
 		gwtC32.setLongitude(8.62328);
@@ -336,7 +336,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC32.setSights("Cathedral");
 		gwtC32.setDateRef(701);
 		
-		GWTContact gwtC33 = GWTContact.createGWTContact("Arona");
+		GWTLocation gwtC33 = GWTLocation.createGWTContact("Arona");
 		gwtC33.setCountry("Italy");
 		gwtC33.setLocation("Arona");
 		gwtC33.setLongitude(8.55715);
@@ -346,7 +346,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC33.setSights("Lake Maggiore, 'Colossal Statue of S. Carlo Borromeo'");
 		gwtC33.setDateRef(702);
 		
-		GWTContact gwtC34 = GWTContact.createGWTContact("Duomo d'Ossala");
+		GWTLocation gwtC34 = GWTLocation.createGWTContact("Duomo d'Ossala");
 		gwtC34.setCountry("Italy");
 		gwtC34.setLocation("Duomo d'Ossala");
 		gwtC34.setLongitude(8.29313);
@@ -355,7 +355,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC34.setDepartDate("5 July, 1833");
 		gwtC34.setDateRef(704);
 		
-		GWTContact gwtC35 = GWTContact.createGWTContact("Sion");
+		GWTLocation gwtC35 = GWTLocation.createGWTContact("Sion");
 		gwtC35.setCountry("Switzerland");
 		gwtC35.setLocation("Sion");
 		gwtC35.setLongitude(7.3667);
@@ -365,7 +365,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC35.setSights("Hermitage");
 		gwtC35.setDateRef(706);
 		
-		GWTContact gwtC36 = GWTContact.createGWTContact("Martigny");
+		GWTLocation gwtC36 = GWTLocation.createGWTContact("Martigny");
 		gwtC36.setCountry("Switzerland");
 		gwtC36.setLocation("Martigny");
 		gwtC36.setLongitude(7.0667);
@@ -374,7 +374,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC36.setDepartDate("9 July, 1833");
 		gwtC36.setDateRef(708);
 		
-		GWTContact gwtC37 = GWTContact.createGWTContact("St. Bernard Convent");
+		GWTLocation gwtC37 = GWTLocation.createGWTContact("St. Bernard Convent");
 		gwtC37.setCountry("Switzerland");
 		gwtC37.setLocation("St. Bernard Convent");
 		gwtC37.setLongitude(7);
@@ -383,7 +383,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC37.setDepartDate("10 July, 1833");
 		gwtC37.setDateRef(709);
 		
-		GWTContact gwtC39 = GWTContact.createGWTContact("Bex");
+		GWTLocation gwtC39 = GWTLocation.createGWTContact("Bex");
 		gwtC39.setCountry("Switzerland");
 		gwtC39.setLocation("Bex");
 		gwtC39.setLongitude(7.0167);
@@ -393,7 +393,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC39.setSights("Union Inn(JJR), Geneva Lake");
 		gwtC39.setDateRef(711);
 		
-		GWTContact gwtC40 = GWTContact.createGWTContact("Lausanne");
+		GWTLocation gwtC40 = GWTLocation.createGWTContact("Lausanne");
 		gwtC40.setCountry("Switzerland");
 		gwtC40.setLocation("Lausanne");
 		gwtC40.setLongitude(6.6335);
@@ -403,7 +403,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC40.setSights("Gibbon's House, Kemble's House");
 		gwtC40.setDateRef(712);
 		
-		GWTContact gwtC41 = GWTContact.createGWTContact("Fribourg");
+		GWTLocation gwtC41 = GWTLocation.createGWTContact("Fribourg");
 		gwtC41.setCountry("Switzerland");
 		gwtC41.setLocation("Fribourg");
 		gwtC41.setLongitude(7.15);
@@ -414,7 +414,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ " College of Jesuits, Nunnery on the Hill(JJR)");
 		gwtC41.setDateRef(715);
 		
-		GWTContact gwtC42 = GWTContact.createGWTContact("Berne");
+		GWTLocation gwtC42 = GWTLocation.createGWTContact("Berne");
 		gwtC42.setCountry("Switzerland");
 		gwtC42.setLocation("Berne");
 		gwtC42.setLongitude(7.45);
@@ -425,7 +425,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "under Mr. Felebourough(or Tellenberg)");
 		gwtC42.setDateRef(716);
 		
-		GWTContact gwtC43 = GWTContact.createGWTContact("Interlaken");
+		GWTLocation gwtC43 = GWTLocation.createGWTContact("Interlaken");
 		gwtC43.setCountry("Switzerland");
 		gwtC43.setLocation("Interlaken");
 		gwtC43.setLongitude(7.85);
@@ -435,7 +435,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC43.setSights("Lake Brienz/Giesbach(finest waterfall)/Swiss family singing");
 		gwtC43.setDateRef(718);
 		
-		GWTContact gwtC44 = GWTContact.createGWTContact("Berne-2");
+		GWTLocation gwtC44 = GWTLocation.createGWTContact("Berne-2");
 		gwtC44.setCountry("Switzerland");
 		gwtC44.setLocation("Berne");
 		gwtC44.setLongitude(7.45);
@@ -444,7 +444,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC44.setDepartDate("22 July, 1833");
 		gwtC44.setDateRef(720);
 		
-		GWTContact gwtC45 = GWTContact.createGWTContact("Sursees");
+		GWTLocation gwtC45 = GWTLocation.createGWTContact("Sursees");
 		gwtC45.setCountry("Switzerland");
 		gwtC45.setLocation("Sursees");
 		gwtC45.setLongitude(8.1167);
@@ -454,7 +454,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC45.setSights("Lake of Sempach");
 		gwtC45.setDateRef(722);
 		
-		GWTContact gwtC46 = GWTContact.createGWTContact("Lucerne");
+		GWTLocation gwtC46 = GWTLocation.createGWTContact("Lucerne");
 		gwtC46.setCountry("Switzerland");
 		gwtC46.setLocation("Lucerne");
 		gwtC46.setLongitude(8.3);
@@ -466,7 +466,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ " General Pfyffer's 'Celebrated relieve topographical chart'");
 		gwtC46.setDateRef(723);
 		
-		GWTContact gwtC47 = GWTContact.createGWTContact("Arth");
+		GWTLocation gwtC47 = GWTLocation.createGWTContact("Arth");
 		gwtC47.setCountry("Switzerland");
 		gwtC47.setLocation("Arth");
 		gwtC47.setLongitude(8.5218);
@@ -475,7 +475,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC47.setDepartDate("26 July, 1833");
 		gwtC47.setDateRef(724);
 		
-		GWTContact gwtC48 = GWTContact.createGWTContact("Einsiedeln");
+		GWTLocation gwtC48 = GWTLocation.createGWTContact("Einsiedeln");
 		gwtC48.setCountry("Switzerland");
 		gwtC48.setLocation("Einsiedeln");
 		gwtC48.setLongitude(8.7443);
@@ -485,7 +485,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC48.setSights("Einsiedeln Abbey");
 		gwtC48.setDateRef(726);
 		
-		GWTContact gwtC49 = GWTContact.createGWTContact("Rapperswill");
+		GWTLocation gwtC49 = GWTLocation.createGWTContact("Rapperswill");
 		gwtC49.setCountry("Switzerland");
 		gwtC49.setLocation("Rapperswill");
 		gwtC49.setLongitude(8.8565);
@@ -495,7 +495,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC49.setSights("Peacock Inn");
 		gwtC49.setDateRef(727);
 		
-		GWTContact gwtC50 = GWTContact.createGWTContact("Zurich");
+		GWTLocation gwtC50 = GWTLocation.createGWTContact("Zurich");
 		gwtC50.setCountry("Switzerland");
 		gwtC50.setLocation("Zurich");
 		gwtC50.setLongitude(8.55);
@@ -506,7 +506,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "to keep possession of refactory canton of Schwytz");
 		gwtC50.setDateRef(730);
 		
-		GWTContact gwtC51 = GWTContact.createGWTContact("Baden");
+		GWTLocation gwtC51 = GWTLocation.createGWTContact("Baden");
 		gwtC51.setCountry("Switzerland");
 		gwtC51.setLocation("Baden");
 		gwtC51.setLongitude(8.3);
@@ -516,7 +516,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC51.setSights("Sword Inn");
 		gwtC51.setDateRef(803);
 		
-		GWTContact gwtC52 = GWTContact.createGWTContact("Basel");
+		GWTLocation gwtC52 = GWTLocation.createGWTContact("Basel");
 		gwtC52.setCountry("Switzerland");
 		gwtC52.setLocation("Basel");
 		gwtC52.setLongitude(7.6);
@@ -526,7 +526,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC52.setSights("Three Kings Inn, cathedral, town on alert for battle");
 		gwtC52.setDateRef(805);
 		
-		GWTContact gwtC53 = GWTContact.createGWTContact("Bienne");
+		GWTLocation gwtC53 = GWTLocation.createGWTContact("Bienne");
 		gwtC53.setCountry("Switzerland");
 		gwtC53.setLocation("Bienne");
 		gwtC53.setLongitude(7.25);
@@ -535,7 +535,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC53.setDepartDate("8 August, 1833");
 		gwtC53.setDateRef(806);
 		
-		GWTContact gwtC54 = GWTContact.createGWTContact("Neufchatel");
+		GWTLocation gwtC54 = GWTLocation.createGWTContact("Neufchatel");
 		gwtC54.setCountry("Switzerland");
 		gwtC54.setLocation("Neufchatel");
 		gwtC54.setLongitude(6.9333);
@@ -545,7 +545,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC54.setSights("Citadel, NOTE: owned by Prussia at this time");
 		gwtC54.setDateRef(808);
 		
-		GWTContact gwtC55 = GWTContact.createGWTContact("Morges");
+		GWTLocation gwtC55 = GWTLocation.createGWTContact("Morges");
 		gwtC55.setCountry("Switzerland");
 		gwtC55.setLocation("Morges");
 		gwtC55.setLongitude(6.5);
@@ -555,7 +555,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC55.setSights("Lake of Geneva");
 		gwtC55.setDateRef(809);
 		
-		GWTContact gwtC56 = GWTContact.createGWTContact("Geneva");
+		GWTLocation gwtC56 = GWTLocation.createGWTContact("Geneva");
 		gwtC56.setCountry("Switzerland");
 		gwtC56.setLocation("Geneva");
 		gwtC56.setLongitude(6.15);
@@ -565,7 +565,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC56.setSights("Hotel des Etrangers, Mont Blanc, Mr. Botte's Showrooms");
 		gwtC56.setDateRef(810);
 		
-		GWTContact gwtC57 = GWTContact.createGWTContact("Sallanches");
+		GWTLocation gwtC57 = GWTLocation.createGWTContact("Sallanches");
 		gwtC57.setCountry("France");
 		gwtC57.setLocation("Sallanches");
 		gwtC57.setLongitude(6.63162);
@@ -574,7 +574,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC57.setDepartDate("15 August, 1833");
 		gwtC57.setDateRef(814);
 		
-		GWTContact gwtC58 = GWTContact.createGWTContact("Chamouni");
+		GWTLocation gwtC58 = GWTLocation.createGWTContact("Chamouni");
 		gwtC58.setCountry("France");
 		gwtC58.setLocation("Chamouni");
 		gwtC58.setLongitude(6.86933);
@@ -583,7 +583,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC58.setDepartDate("16 August, 1833");
 		gwtC58.setDateRef(815);
 		
-		GWTContact gwtC59 = GWTContact.createGWTContact("Chamouni-2");
+		GWTLocation gwtC59 = GWTLocation.createGWTContact("Chamouni-2");
 		gwtC59.setCountry("France");
 		gwtC59.setLocation("Chamouni");
 		gwtC59.setLongitude(6.86933);
@@ -592,7 +592,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC59.setDepartDate("19 August, 1833");
 		gwtC59.setDateRef(818);
 		
-		GWTContact gwtC60 = GWTContact.createGWTContact("Geneva-2");
+		GWTLocation gwtC60 = GWTLocation.createGWTContact("Geneva-2");
 		gwtC60.setCountry("Switzerland");
 		gwtC60.setLocation("Geneva");
 		gwtC60.setLongitude(6.15);
@@ -603,7 +603,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "English at Library, Opera, Voltaire's Residence");
 		gwtC60.setDateRef(819);
 		
-		GWTContact gwtC61 = GWTContact.createGWTContact("Nantua");
+		GWTLocation gwtC61 = GWTLocation.createGWTContact("Nantua");
 		gwtC61.setCountry("France");
 		gwtC61.setLocation("Nantua");
 		gwtC61.setLongitude(5.61667);
@@ -613,7 +613,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC61.setSights("view of Mont Blanc on road to Lyons");
 		gwtC61.setDateRef(822);
 		
-		GWTContact gwtC62 = GWTContact.createGWTContact("Lyon");
+		GWTLocation gwtC62 = GWTLocation.createGWTContact("Lyon");
 		gwtC62.setCountry("France");
 		gwtC62.setLocation("Lyon");
 		gwtC62.setLongitude(4.84671);
@@ -623,7 +623,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC62.setSights("Hotel de Europe, manufacturies, Museum");
 		gwtC62.setDateRef(823);
 		
-		GWTContact gwtC63 = GWTContact.createGWTContact("Chalons sur Saone");
+		GWTLocation gwtC63 = GWTLocation.createGWTContact("Chalons sur Saone");
 		gwtC63.setCountry("France");
 		gwtC63.setLocation("Chalons sur Saone");
 		gwtC63.setLongitude(6.11682);
@@ -632,7 +632,7 @@ public class AllList extends ArrayList<GWTContact>{
 		gwtC63.setDepartDate("27 August, 1833");
 		gwtC63.setDateRef(826);
 		
-		GWTContact gwtC64 = GWTContact.createGWTContact("Dijon");
+		GWTLocation gwtC64 = GWTLocation.createGWTContact("Dijon");
 		gwtC64.setCountry("France");
 		gwtC64.setLocation("Dijon");
 		gwtC64.setLongitude(5.01667);
@@ -643,7 +643,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "Hotel de la Cloche, wine cellars");
 		gwtC64.setDateRef(827);
 		
-		GWTContact gwtC65 = GWTContact.createGWTContact("Fontainbleau");
+		GWTLocation gwtC65 = GWTLocation.createGWTContact("Fontainbleau");
 		gwtC65.setCountry("France");
 		gwtC65.setLocation("Fontainbleau");
 		gwtC65.setLongitude(2.7);
@@ -653,7 +653,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC65.setSights("Hotel de Ville de Lyons, palace, table where Napoleon signed abdication");
 		gwtC65.setDateRef(830);
 		
-		GWTContact gwtC66 = GWTContact.createGWTContact("Paris");
+		GWTLocation gwtC66 = GWTLocation.createGWTContact("Paris");
 		gwtC66.setCountry("France");
 		gwtC66.setLocation("Paris");
 		gwtC66.setLongitude(2.3488);
@@ -664,7 +664,7 @@ public class AllList extends ArrayList<GWTContact>{
 //				+ "opera, Louvre, St. Cloud, Versailles, English Church Service");
 		gwtC66.setDateRef(831);
 		
-		GWTContact gwtC67 = GWTContact.createGWTContact("Chantilly");
+		GWTLocation gwtC67 = GWTLocation.createGWTContact("Chantilly");
 		gwtC67.setCountry("France");
 		gwtC67.setLocation("Chantilly");
 		gwtC67.setLongitude(2.47124);
@@ -674,7 +674,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC67.setSights("parks, palace");
 		gwtC67.setDateRef(916);
 		
-		GWTContact gwtC68 = GWTContact.createGWTContact("Amiens");
+		GWTLocation gwtC68 = GWTLocation.createGWTContact("Amiens");
 		gwtC68.setCountry("France");
 		gwtC68.setLocation("Amiens");
 		gwtC68.setLongitude(2.3);
@@ -684,7 +684,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC68.setSights("cathedral");
 		gwtC68.setDateRef(917);
 		
-		GWTContact gwtC69 = GWTContact.createGWTContact("Montreuil");
+		GWTLocation gwtC69 = GWTLocation.createGWTContact("Montreuil");
 		gwtC69.setCountry("France");
 		gwtC69.setLocation("Montreuil");
 		gwtC69.setLongitude(1.76667);
@@ -694,7 +694,7 @@ public class AllList extends ArrayList<GWTContact>{
 //		gwtC69.setSights("Hotel de l'Europe");
 		gwtC69.setDateRef(918);
 		
-		GWTContact gwtC70 = GWTContact.createGWTContact("Calais-2");
+		GWTLocation gwtC70 = GWTLocation.createGWTContact("Calais-2");
 		gwtC70.setCountry("France");
 		gwtC70.setLocation("Calais");
 		gwtC70.setLongitude(1.85635);
@@ -777,8 +777,8 @@ public class AllList extends ArrayList<GWTContact>{
 		return list;
 	}
 	
-	public static GWTContact getContact(String id) {
-		GWTContact c = new GWTContact();
+	public static GWTLocation getContact(String id) {
+		GWTLocation c = new GWTLocation();
 		int location = -1;
 		for (int i=0; i<list.size(); i++) {
 			if(list.get(i).getId().matches(id)) {
@@ -791,18 +791,18 @@ public class AllList extends ArrayList<GWTContact>{
 		return c;
 	}
 	
-	public static List<GWTContact> getAllContacts() {
+	public static List<GWTLocation> getAllContacts() {
 		return list;
 	}
 	
-	public static ReducedContact getReducedContact(int location) {
-		ReducedContact c = new ReducedContact(list.get(location).getId(), list.get(location).getLongitude(), list.get(location).getLatitude());
+	public static ReducedLocation getReducedContact(int location) {
+		ReducedLocation c = new ReducedLocation(list.get(location).getId(), list.get(location).getLongitude(), list.get(location).getLatitude());
 		return c;
 	}
 	
 	public static int getRef(String date) {
 		int ref = 0;
-		for (GWTContact c : list) {
+		for (GWTLocation c : list) {
 			if (c.getArrivalDate().matches(date)) {
 				ref = c.getDateRef();
 			}

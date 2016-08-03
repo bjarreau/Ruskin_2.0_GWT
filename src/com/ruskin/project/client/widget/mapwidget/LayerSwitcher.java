@@ -9,10 +9,12 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.ruskin.project.client.MainWidget;
 
 public class LayerSwitcher extends PopupPanel {
-	MainWidget master;
-	VerticalPanel holder = new VerticalPanel();
-	CheckBox diary = new CheckBox("Diary");
-	CheckBox ruskin = new CheckBox("Ruskin");
+	private final Label lbl = new Label("Perspective");
+	private final VerticalPanel holder = new VerticalPanel();
+	private final CheckBox diary = new CheckBox(" Diary");
+	private final CheckBox ruskin = new CheckBox(" Ruskin");
+	
+	private final MainWidget master;
 	
 	public LayerSwitcher (MainWidget master) {
 		this.master = master;
@@ -22,15 +24,18 @@ public class LayerSwitcher extends PopupPanel {
 
 	private void buildUI() {
 		holder.setSize("200px", "100px");
-		Label lbl = new Label("Perspective");
-		lbl.setWidth(holder.getElement().getStyle().getWidth());
-		lbl.setStyleName("perspectiveLbl");
 		
-		holder.setStyleName("perspective");
+		lbl.getElement().addClassName("perspectiveLbl");
+		diary.getElement().addClassName("perspective");
+		ruskin.getElement().addClassName("perspective");
+		holder.getElement().addClassName("perspective");
+		
 		holder.add(lbl);
 		holder.add(diary);
 		holder.add(ruskin);
+		
 		setWidget(holder);
+
 		this.getElement().getStyle().setZIndex(1500);
 		
 		diary.addClickHandler(new ClickHandler() {
@@ -64,10 +69,6 @@ public class LayerSwitcher extends PopupPanel {
 
 	public VerticalPanel getHolder() {
 		return holder;
-	}
-
-	public void setHolder(VerticalPanel holder) {
-		this.holder = holder;
 	}
 
 	public CheckBox getDiary() {

@@ -9,6 +9,7 @@
     
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.google.gwt.xml.XML"/>
   
     <!-- Inherit the Open Layers stuff.                        	  -->
 	<inherits name='org.gwtopenmaps.openlayers.OpenLayers'/>	
