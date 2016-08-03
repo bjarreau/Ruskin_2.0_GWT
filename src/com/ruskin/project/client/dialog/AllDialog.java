@@ -50,8 +50,6 @@ public class AllDialog {
 	private final Label MarylblLocation= new Label();
 	private final Label MarylblLink= new Label();
 	private final Label MarylblSights= new Label();
-	private final Label MarylblLatitude = new Label();
-	private final Label MarylblLongitude = new Label();
 	private final Label passThrus = new Label("Pass-Throughs");
 	
 	private GWTLocation showingFor;
@@ -169,22 +167,12 @@ public class AllDialog {
 		table.getCellFormatter().setStyleName(i, 0, "dialogLbl");
 		i += 1;
 		
-		table.setWidget(i, 0, new Label("Longitude"));
-		table.setWidget(i, 1, MarylblLongitude);
-		table.getCellFormatter().setStyleName(i, 0, "dialogLbl");
-		i += 1;
-		
-		table.setWidget(i, 0, new Label("Latitude:"));
-		table.setWidget(i, 1, MarylblLatitude);
-		table.getCellFormatter().setStyleName(i, 0, "dialogLbl");
-		i += 1;
-		
-		table.setWidget(i, 0, new Label("Arrival Date:"));
+		table.setWidget(i, 0, new Label("Arrival:"));
 		table.setWidget(i, 1, MarylblArrivalDate);
 		table.getCellFormatter().setStyleName(i, 0, "dialogLbl");
 		i += 1;
 		
-		table.setWidget(i, 0, new Label("Departure Date:"));
+		table.setWidget(i, 0, new Label("Departure:"));
 		table.setWidget(i, 1, MarylblDepartDate);
 		table.getCellFormatter().setStyleName(i, 0, "dialogLbl");
 		i += 1;
@@ -214,16 +202,6 @@ public class AllDialog {
 			final String Mval = showingForMary.getCountry();
 			MarylblId.setText(Mval);
 			MarylblId.setStyleName("dialogLbl");
-		}
-		{
-			final String Mval = nf.format(showingForMary.getLongitude());
-			MarylblLongitude.setText(Mval);
-			MarylblLongitude.setStyleName("dialogLbl");
-		}
-		{
-			final String Mval = nf.format(showingForMary.getLatitude());
-			MarylblLatitude.setText(Mval);
-			MarylblLatitude.setStyleName("dialogLbl");
 		}
 		{
 			final String Mval = showingForMary.getArrivalDate();

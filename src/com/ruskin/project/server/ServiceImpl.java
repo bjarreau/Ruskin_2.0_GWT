@@ -20,6 +20,7 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 	
 	private static final String DEFAULT_WMS_BASELAYER = "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/${z}/${y}/${x}";
 	private static final String DEFAULT_WMS_LAYER_NAMES = "ArcGIS";
+	private static final String DEFAULT_FILE_NAME = "data/places_visited_by_mary.xml";
 	
 	private final Map<String, String> clientConfig;
 	private ServletConfig servletConfig;
@@ -52,6 +53,13 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 					clientConfig.put(Const.KEY_WMS_LAYER_NAMES, DEFAULT_WMS_LAYER_NAMES);
 				} else {
 					clientConfig.put(Const.KEY_WMS_LAYER_NAMES, val);
+				}
+				
+			} else if (key.equals(Const.KEY_FILE_NAME)) {
+				if (val == null || val.trim().isEmpty()) {
+					clientConfig.put(Const.KEY_FILE_NAME, DEFAULT_FILE_NAME);
+				} else {
+					clientConfig.put(Const.KEY_FILE_NAME, val);
 				}
 				
 			}

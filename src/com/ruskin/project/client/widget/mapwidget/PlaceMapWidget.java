@@ -16,7 +16,6 @@ import org.gwtopenmaps.openlayers.client.control.SelectFeatureOptions;
 import org.gwtopenmaps.openlayers.client.event.VectorFeatureSelectedListener;
 import org.gwtopenmaps.openlayers.client.feature.VectorFeature;
 import org.gwtopenmaps.openlayers.client.geometry.Point;
-import org.gwtopenmaps.openlayers.client.layer.ArcGIS93Rest;
 import org.gwtopenmaps.openlayers.client.layer.Layer;
 import org.gwtopenmaps.openlayers.client.layer.TransitionEffect;
 import org.gwtopenmaps.openlayers.client.layer.Vector;
@@ -26,7 +25,6 @@ import org.gwtopenmaps.openlayers.client.layer.WMSParams;
 import org.gwtopenmaps.openlayers.client.layer.XYZ;
 import org.gwtopenmaps.openlayers.client.layer.XYZOptions;
 
-import com.gargoylesoftware.htmlunit.javascript.host.Console;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
@@ -68,10 +66,6 @@ public class PlaceMapWidget implements IsWidget {
 		
 		{
 			final String layers = Main.getConfig().get(Const.KEY_WMS_LAYER_NAMES);
-			
-			System.out.println("Base Name : " + Main.getConfig().get(Const.KEY_WMS_LAYER_NAMES));
-			System.out.println("Base Layer : " + Main.getConfig().get(Const.KEY_WMS_BASE_LAYER));
-			
 			this.addXYZ(layers, Main.getConfig().get(Const.KEY_WMS_BASE_LAYER));
 		}
 		placesControl = new SelectFeature(placesLayer, clickControlOptions);
@@ -168,9 +162,8 @@ public class PlaceMapWidget implements IsWidget {
 	 */
 	public void addXYZ(String name, String url) {
 		final XYZOptions options = new XYZOptions();
-		final XYZ xyzLayer = new XYZ(name, url, options);
-		
 		options.setSphericalMercator(true);
+		final XYZ xyzLayer = new XYZ(name, url, options);
 		
 		this.map.addLayer(xyzLayer);
 		this.map.setBaseLayer(xyzLayer);
@@ -234,7 +227,7 @@ public class PlaceMapWidget implements IsWidget {
 	
 	public void PlotPointAll(Boolean plot) {
 		final Style pointStyle = new Style();		
-		final Style pointStyle2 = new Style();		
+//		final Style pointStyle2 = new Style();		
 		
 		if (plot == true) {
 			for (int i=0; i<MaryList.getSize(); i++) {

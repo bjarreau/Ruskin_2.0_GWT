@@ -28,9 +28,6 @@ public class MainWidget implements IsWidget {
 	private final HTMLPanel mainPanel = new HTMLPanel("");	
 	private final HTMLPanel titlePanel = new HTMLPanel("");
 	private final HTMLPanel chronologyPanel = new HTMLPanel("");
-	private final AllList All = new AllList();
-	private final MaryList Mary = new MaryList();
-	private final PassThrough Pass = new PassThrough();
 	
 	private final Carousel timePanel;
 	private final PlaceMapWidget placesMap;
@@ -38,10 +35,15 @@ public class MainWidget implements IsWidget {
 	private final LayerSwitcher switcher;
 	
 	public MainWidget() {
+		new AllList();
+		new MaryList();
+		new PassThrough();
+		
 		placesMap = new PlaceMapWidget(this);
 		switcher = new LayerSwitcher(this);
 		timePanel = new Carousel(this);
 		allDialog = new AllDialog(this);
+	
 		
 		this.buildUI();		
 	}

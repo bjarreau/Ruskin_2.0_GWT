@@ -6,12 +6,6 @@ import java.util.Map;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.xml.client.Document;
-import com.google.gwt.xml.client.Element;
-import com.google.gwt.xml.client.Node;
-import com.google.gwt.xml.client.NodeList;
-import com.google.gwt.xml.client.XMLParser;
-
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  * Author: Brittney Jarreau
@@ -21,9 +15,6 @@ public class Main implements EntryPoint {
 	private static Main INSTANCE;
 	private final ServiceAsync manager;
 	private Map<String, String> config;
-	
-	static final String xmlurl = "data/places_visited_by_mary.xml";
-	private String xmlText = null;
 
 	public static ServiceAsync getServices() {
 		return INSTANCE.manager;
@@ -51,7 +42,7 @@ public class Main implements EntryPoint {
 					buildUI();
 					}
 			});
-//		httpGetFile(xmlurl);
+//		httpGetFile(this.getConfig().get(Const.KEY_FILE_NAME));
 	}
 
 	/**
@@ -64,30 +55,20 @@ public class Main implements EntryPoint {
 		root.add(main);
 	}
 	
-	public static void httpGetFile(final String url) {
-		try {
-			// parse the XML document into a DOM
-			Document messageDom = XMLParser.parse(url);
-			
-			messageDom.getDocumentElement().normalize();
-			System.out.println("Root element :" + messageDom.getDocumentElement().getNodeName());
-			
-			NodeList nList = messageDom.getElementsByTagName("place");
-			
-			System.out.println("----------------------------");
-	
-			for (int temp = 0; temp < nList.getLength(); temp++) {
-				Node nNode = nList.item(temp);
-
-				System.out.println("\nCurrent Element :" + nNode.getNodeName());
-						
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					System.out.println("Place type: " + eElement.getAttribute("type"));
-				}
-			} 
-		} catch (Exception e) {
-				e.printStackTrace();
-		}
-	}
+//	public static void httpGetFile(final String url) {
+//		   String record = "";
+//	        try{
+//	            BufferedReader reader = new BufferedReader(new FileReader(url));
+//	            String line;
+//	            while ((line = reader.readLine()) != null){
+//	                record += line;
+//	            }
+//	             reader.close();
+//	            StringBuilder writer = new StringBuilder();
+//	            writer.append(record);
+//	        }catch (Exception e){
+//	            System.out.println("Exception occurred trying to read" + url);
+//	            e.printStackTrace();
+//	        }
+//	}
 }
