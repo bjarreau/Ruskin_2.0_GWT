@@ -13,5 +13,4 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface Service extends RemoteService {
 
 	Map<String, String> getConfig();
-
 }

@@ -10,12 +10,16 @@ import org.gwtopenmaps.openlayers.client.Map;
 import org.gwtopenmaps.openlayers.client.MapOptions;
 import org.gwtopenmaps.openlayers.client.MapWidget;
 import org.gwtopenmaps.openlayers.client.Projection;
+import org.gwtopenmaps.openlayers.client.Size;
 import org.gwtopenmaps.openlayers.client.Style;
+import org.gwtopenmaps.openlayers.client.control.Control;
 import org.gwtopenmaps.openlayers.client.control.SelectFeature;
 import org.gwtopenmaps.openlayers.client.control.SelectFeatureOptions;
 import org.gwtopenmaps.openlayers.client.event.VectorFeatureSelectedListener;
 import org.gwtopenmaps.openlayers.client.feature.VectorFeature;
 import org.gwtopenmaps.openlayers.client.geometry.Point;
+import org.gwtopenmaps.openlayers.client.layer.Image;
+import org.gwtopenmaps.openlayers.client.layer.ImageOptions;
 import org.gwtopenmaps.openlayers.client.layer.Layer;
 import org.gwtopenmaps.openlayers.client.layer.TransitionEffect;
 import org.gwtopenmaps.openlayers.client.layer.Vector;
@@ -61,13 +65,17 @@ public class PlaceMapWidget implements IsWidget {
 		map = mapWidget.getMap();
 		map.setRestrictedExtent(bounds);
 		map.setMinMaxZoomLevel(0, 20);
+		//map.getExtent().transform(new Projection("EPSG:900913"), proj);
 	
 		master.getLayerSwitcher();
 		
 		{
 			final String layers = Main.getConfig().get(Const.KEY_WMS_LAYER_NAMES);
 			this.addXYZ(layers, Main.getConfig().get(Const.KEY_WMS_BASE_LAYER));
+			final String swiss = "Switzerland";
+			this.addXYZOverlay(swiss, "img/1832_Switzerland_0247067.png", new Bounds(657450,5705000,1180000,6130000), new Size(100, 100));
 		}
+		
 		placesControl = new SelectFeature(placesLayer, clickControlOptions);
 		
 		map.setRestrictedExtent(bounds);
@@ -145,15 +153,18 @@ public class PlaceMapWidget implements IsWidget {
 		wmsParams.setFormat("image/png");
 		wmsParams.setLayers(name);
 		wmsParams.setStyles("");
+		wmsParams.setTransparent(true);
 		wmsLayerParams.setUntiled();
+		wmsLayerParams.setBuffer(1);
 		wmsLayerParams.setTransitionEffect(TransitionEffect.RESIZE);
 		
 		final WMS wmsLayer = new WMS(name, url, wmsParams, wmsLayerParams);
-		
+		wmsLayer.setIsBaseLayer(true);
 		wmsLayers.put(name, wmsLayer);
 		layersHashMap.put(name, wmsLayer);			
 		this.map.addLayer(wmsLayer);
-		this.map.setBaseLayer(wmsLayer);
+		this.map.setLayerZIndex(wmsLayer, 2000);
+		//this.map.setBaseLayer(wmsLayer);
 	}
 	
 	/** Adds a {@link WMS} with only one map layer to this ContactMapWidget.
@@ -167,6 +178,14 @@ public class PlaceMapWidget implements IsWidget {
 		
 		this.map.addLayer(xyzLayer);
 		this.map.setBaseLayer(xyzLayer);
+	}
+	
+	public void addXYZOverlay(String name, String url, Bounds bounds, Size size) {
+		final ImageOptions opts = new ImageOptions();
+		opts.setNumZoomLevels(20);
+		opts.setIsBaseLayer(false);
+		final Image img= new Image(name, url, bounds, size, opts);
+		this.map.addLayer(img);
 	}
 	
 	/** Zooms to a specified bounding box.

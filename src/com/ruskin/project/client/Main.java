@@ -5,7 +5,17 @@ import java.util.Map;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.xml.client.DOMException;
+import com.google.gwt.xml.client.Document;
+import com.google.gwt.xml.client.Element;
+import com.google.gwt.xml.client.Node;
+import com.google.gwt.xml.client.Text;
+import com.google.gwt.xml.client.XMLParser;
+import com.ruskin.project.server.ServiceImpl;
+import com.ruskin.project.shared.Const;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  * Author: Brittney Jarreau
@@ -15,6 +25,7 @@ public class Main implements EntryPoint {
 	private static Main INSTANCE;
 	private final ServiceAsync manager;
 	private Map<String, String> config;
+	
 
 	public static ServiceAsync getServices() {
 		return INSTANCE.manager;
@@ -42,7 +53,6 @@ public class Main implements EntryPoint {
 					buildUI();
 					}
 			});
-//		httpGetFile(this.getConfig().get(Const.KEY_FILE_NAME));
 	}
 
 	/**
@@ -55,20 +65,4 @@ public class Main implements EntryPoint {
 		root.add(main);
 	}
 	
-//	public static void httpGetFile(final String url) {
-//		   String record = "";
-//	        try{
-//	            BufferedReader reader = new BufferedReader(new FileReader(url));
-//	            String line;
-//	            while ((line = reader.readLine()) != null){
-//	                record += line;
-//	            }
-//	             reader.close();
-//	            StringBuilder writer = new StringBuilder();
-//	            writer.append(record);
-//	        }catch (Exception e){
-//	            System.out.println("Exception occurred trying to read" + url);
-//	            e.printStackTrace();
-//	        }
-//	}
 }
