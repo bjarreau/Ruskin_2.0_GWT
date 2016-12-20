@@ -12,5 +12,5 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("pm")
 public interface Service extends RemoteService {
 
-	Map<String, String> getConfig();
+	//Map<String, String> getConfig();
 }

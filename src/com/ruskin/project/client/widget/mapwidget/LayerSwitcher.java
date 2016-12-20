@@ -13,7 +13,8 @@ public class LayerSwitcher extends PopupPanel {
 	private final VerticalPanel holder = new VerticalPanel();
 	private final CheckBox diary = new CheckBox(" Diary");
 	private final CheckBox ruskin = new CheckBox(" Ruskin");
-	
+	private final CheckBox Switzerland = new CheckBox(" Switzerland");
+	private Boolean SwissOn = false;
 	private final MainWidget master;
 	
 	public LayerSwitcher (MainWidget master) {
@@ -28,11 +29,13 @@ public class LayerSwitcher extends PopupPanel {
 		lbl.getElement().addClassName("perspectiveLbl");
 		diary.getElement().addClassName("perspective");
 		ruskin.getElement().addClassName("perspective");
+		Switzerland.getElement().addClassName("perspective");
 		holder.getElement().addClassName("perspective");
 		
 		holder.add(lbl);
 		holder.add(diary);
 		holder.add(ruskin);
+		holder.add(Switzerland);
 		
 		setWidget(holder);
 
@@ -46,6 +49,8 @@ public class LayerSwitcher extends PopupPanel {
 					master.getMap().NewLayer("Diary Layer");
 				} else if (getRuskin().getValue()){
 					master.getMap().NewLayer("Ruskin Layer");
+				} else if (Switzerland.getValue()) {
+					master.getMap().NewLayer("Switzerland");
 				} else {
 					master.getMap().NewLayer("None");
 				}
@@ -60,15 +65,32 @@ public class LayerSwitcher extends PopupPanel {
 					master.getMap().NewLayer("Ruskin Layer");
 				} else if (getDiary().getValue()){
 					master.getMap().NewLayer("Diary Layer");
+				} else if (Switzerland.getValue()) {
+					master.getMap().NewLayer("Switzerland");
 				} else {
 					master.getMap().NewLayer("None");
 				}
+			}
+		});
+		
+		Switzerland.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent Event) {
+				if(Switzerland.getValue()) {
+					SwissOn = true;
+				} else {
+					SwissOn = false;
+				}
+				master.getMap().updateVisibleLayers();
 			}
 		});
 	}
 
 	public VerticalPanel getHolder() {
 		return holder;
+	}
+	
+	public Boolean getSwitzerland() {
+		return SwissOn;
 	}
 
 	public CheckBox getDiary() {

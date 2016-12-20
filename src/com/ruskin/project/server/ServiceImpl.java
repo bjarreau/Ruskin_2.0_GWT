@@ -71,8 +71,8 @@ public class ServiceImpl extends RemoteServiceServlet implements Service {
 		}
 	}
 	
-	@Override
-	public Map<String, String> getConfig() {
-		return clientConfig;
-	}
+//	@Override
+//	public Map<String, String> getConfig() {
+//		return clientConfig;
+//	}
 }

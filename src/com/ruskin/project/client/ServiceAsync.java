@@ -8,7 +8,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  * The async counterpart of {@link Service}.
  */
 public interface ServiceAsync {
-	void getConfig(AsyncCallback<Map<String, String>> callback);
+	//void getConfig(AsyncCallback<Map<String, String>> callback);
 	
 	//String httpGetFile(String url, AsyncCallback<String> callback);
 }

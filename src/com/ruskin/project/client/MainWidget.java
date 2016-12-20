@@ -41,7 +41,7 @@ public class MainWidget implements IsWidget {
 	private final HTMLPanel mainPanel = new HTMLPanel("");	
 	private final HTMLPanel titlePanel = new HTMLPanel("");
 	private final HTMLPanel chronologyPanel = new HTMLPanel("");
-	private final String dataFileName = Main.getConfig().get(Const.KEY_FILE_NAME);
+	private final String dataFileName = Const.KEY_FILE_NAME;
 	
 	private String xmlData;
 	private final Carousel timePanel;

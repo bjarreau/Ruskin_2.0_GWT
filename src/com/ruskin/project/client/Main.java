@@ -31,9 +31,9 @@ public class Main implements EntryPoint {
 		return INSTANCE.manager;
 	}
 	
-	public static Map<String, String> getConfig() {
-		return INSTANCE.config;
-	}
+//	public static Map<String, String> getConfig() {
+//		return INSTANCE.config;
+//	}
 	
 	private Main() {
 		INSTANCE = this;
@@ -46,13 +46,13 @@ public class Main implements EntryPoint {
 	public void onModuleLoad() {
 		// Trigger download of config.  When that is done, trigger download of featureToggleMap.
 		// When that is done, kick off buildUI.
-			manager.getConfig(new SimplifiedCallback<Map<String, String>>("get client-side config", true) {
-				@Override
-				public void onSuccess(Map<String, String> config) {
-					Main.this.config = Collections.unmodifiableMap(config);
+//			manager.getConfig(new SimplifiedCallback<Map<String, String>>("get client-side config", true) {
+//				@Override
+//				public void onSuccess(Map<String, String> config) {
+//					Main.this.config = Collections.unmodifiableMap(config);
 					buildUI();
-					}
-			});
+//					}
+//			});
 	}
 
 	/**

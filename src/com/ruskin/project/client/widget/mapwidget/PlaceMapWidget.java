@@ -52,8 +52,6 @@ public class PlaceMapWidget implements IsWidget {
 	private final MapOptions options = new MapOptions();
 	private final Bounds bounds = new Bounds(-6602637.2967569,2397352.6248374,9051666.0938681,11202898.282064);
 	private static List<GWTLocation> currentlyHighlighted = new ArrayList<>();
-	private final java.util.Map<String, WMS> wmsLayers = new HashMap<String, WMS>();
-	private final java.util.Map<String, Layer> layersHashMap= new HashMap<String, Layer>();
 	private final Projection proj = new Projection("EPSG:4326");
 	private final LonLat center = new LonLat(8,48);
 	
@@ -70,10 +68,10 @@ public class PlaceMapWidget implements IsWidget {
 		master.getLayerSwitcher();
 		
 		{
-			final String layers = Main.getConfig().get(Const.KEY_WMS_LAYER_NAMES);
-			this.addXYZ(layers, Main.getConfig().get(Const.KEY_WMS_BASE_LAYER));
+			final String layers = Const.KEY_WMS_LAYER_NAMES;
+			this.addXYZ(layers, Const.KEY_WMS_BASE_LAYER);
 			final String swiss = "Switzerland";
-			this.addXYZOverlay(swiss, "img/1832_Switzerland_0247067.png", new Bounds(657450,5705000,1180000,6130000), new Size(100, 100));
+			this.addXYZOverlay(swiss, "img/1832_Switzerland_0247067.png", new Bounds(668000,5701000,1174800,6125500), new Size(100, 100));
 		}
 		
 		placesControl = new SelectFeature(placesLayer, clickControlOptions);
@@ -107,6 +105,14 @@ public class PlaceMapWidget implements IsWidget {
 		
 		map.addControl(placesControl);
 		map.addLayer(placesLayer);
+	}
+	
+	public void updateVisibleLayers() {
+		if(master.getLayerSwitcher().getSwitzerland()) {
+			map.getLayerByName("Switzerland").setIsVisible(true);
+		} else {
+			map.getLayerByName("Switzerland").setIsVisible(false);
+		}
 	}
 
 	public void NewLayer(String choice) {
@@ -146,31 +152,6 @@ public class PlaceMapWidget implements IsWidget {
 	 * @param name
 	 * @param url - the URL needed for the WMS layer
 	 */
-	public void addWMS(String name, String url) {
-		final WMSParams wmsParams = new WMSParams();
-		final WMSOptions wmsLayerParams = new WMSOptions();
-		
-		wmsParams.setFormat("image/png");
-		wmsParams.setLayers(name);
-		wmsParams.setStyles("");
-		wmsParams.setTransparent(true);
-		wmsLayerParams.setUntiled();
-		wmsLayerParams.setBuffer(1);
-		wmsLayerParams.setTransitionEffect(TransitionEffect.RESIZE);
-		
-		final WMS wmsLayer = new WMS(name, url, wmsParams, wmsLayerParams);
-		wmsLayer.setIsBaseLayer(true);
-		wmsLayers.put(name, wmsLayer);
-		layersHashMap.put(name, wmsLayer);			
-		this.map.addLayer(wmsLayer);
-		this.map.setLayerZIndex(wmsLayer, 2000);
-		//this.map.setBaseLayer(wmsLayer);
-	}
-	
-	/** Adds a {@link WMS} with only one map layer to this ContactMapWidget.
-	 * @param name
-	 * @param url - the URL needed for the WMS layer
-	 */
 	public void addXYZ(String name, String url) {
 		final XYZOptions options = new XYZOptions();
 		options.setSphericalMercator(true);
@@ -186,6 +167,8 @@ public class PlaceMapWidget implements IsWidget {
 		opts.setIsBaseLayer(false);
 		final Image img= new Image(name, url, bounds, size, opts);
 		this.map.addLayer(img);
+		System.out.println(this.map.getLayerByName(name).getId());
+		img.setIsVisible(false);
 	}
 	
 	/** Zooms to a specified bounding box.
@@ -246,7 +229,6 @@ public class PlaceMapWidget implements IsWidget {
 	
 	public void PlotPointAll(Boolean plot) {
 		final Style pointStyle = new Style();		
-//		final Style pointStyle2 = new Style();		
 		
 		if (plot == true) {
 			for (int i=0; i<MaryList.getSize(); i++) {
@@ -264,22 +246,6 @@ public class PlaceMapWidget implements IsWidget {
 				pointFeature.setFeatureId(c.getId());
 				placesLayer.addFeature(pointFeature);
 			}
-			
-//			ReducedContact c2 = new ReducedContact("John Was Here", 60, 40);
-//			
-//			LonLat ll2 = c2.getCoordinate();
-//			Point point2 = new Point(ll2.lon(), ll2.lat());
-//			point2.transform(proj, new Projection(map.getProjection()));	
-//			pointStyle2.setExternalGraphic("img/map_marker_blue.png");
-//			pointStyle2.setGraphicSize(10, 17);
-//			pointStyle2.setFillOpacity(1.0);
-//
-//			VectorFeature pointFeature2 = new VectorFeature(point2, pointStyle2);
-//			pointFeature2.getAttributes().setAttribute(Const.FEATURE_ATTRIBUTE_CONTACT_ID, c2.getId());
-//			pointFeature2.setFeatureId(c2.getId());
-//			placesLayer.addFeature(pointFeature2);
-//			
-//			placesControl.activate();
 		}
 	}
 	
@@ -303,7 +269,6 @@ public class PlaceMapWidget implements IsWidget {
 				pointFeature.setFeatureId(c.getId());
 				placesLayer.addFeature(pointFeature);
 			}
-//			placesControl.activate();
 		}
 	}
 	public void PlotPointsRuskin (Boolean plot) {
@@ -322,8 +287,6 @@ public class PlaceMapWidget implements IsWidget {
 			pointFeature.getAttributes().setAttribute(Const.FEATURE_ATTRIBUTE_CONTACT_ID, c.getId());
 			pointFeature.setFeatureId(c.getId());
 			placesLayer.addFeature(pointFeature);
-			
-//			placesControl.activate();
 		}
 	}
 	
@@ -336,29 +299,6 @@ public class PlaceMapWidget implements IsWidget {
 		}
 	}
 	
-//	/**This method unhighlights all of the currently highlighted contacts.
-//	 * 
-//	 */
-//	public static void clearRuskinLayerHighlighted() {	
-//		for(GWTContact c:currentlyHighlighted){
-//			ruskinVectorLayer.getFeatureById(c.getId()).getStyle().setExternalGraphic("img/push_pin_red.png");
-//		}
-//	}
-//	
-//	/**This method unhighlights all of the currently highlighted contacts.
-//	 * 
-//	 */
-//	public static void clearAllLayerHighlighted() {	
-//		for(GWTContact c:currentlyHighlighted){
-//			if(c.getAuthor().matches("John Ruskin")) {
-//				allVectorLayer.getFeatureById(c.getId()).getStyle().setExternalGraphic("img/push_pin_red.png");
-//			}
-//			else {
-//				allVectorLayer.getFeatureById(c.getId()).getStyle().setExternalGraphic("img/push_pin_red.png");
-//			}
-//		}
-//	}
-	
 	public List<GWTLocation> getCurrentlyHighlighted() {
 		return currentlyHighlighted;
 	}
@@ -368,5 +308,3 @@ public class PlaceMapWidget implements IsWidget {
 		return decorator;
 	}
 }
-
-
